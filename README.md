@@ -48,3 +48,23 @@ Typescript is also a superset of EcmaScript which determines the standard specif
 <img src="assets/EcmaScript-Superset.png" style="zoom:120%;" />
 
 As a javascript superset what advantages can typescript provide?
+
+
+
+## Static Typing
+
+Javascript is a language that has dynamic typing characteristics.
+
+As a superset, typescript provides the new advantage of supporting static typing characteristics. So, what are the advantages of static typing?
+
+<img src="assets/Static-Typing.png" style="zoom:120%;" />
+
+Every time we create a new variable we must first define the data type. This protects developers from a bunch of common bugs and security flaws in the code we write. Software development becomes more secure.
+
+Below we create a variable name with data type number. However we pass a string literal so that the typescript code will fail when it compiles into javascript :
+
+```typescript
+let fullname: number;
+fullname = "Gun Gun Febrianza"; // compile-time error
+```
+
