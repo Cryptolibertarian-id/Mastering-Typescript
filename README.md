@@ -6,6 +6,7 @@
 
 - [ ] Typescript
   - [ ] Why Typescript?
+    - [ ] Static Typing
 
 
 
@@ -35,6 +36,8 @@ If you look at the picture above, you will understand, every Javascript Code is 
 
 *—Anders Hejlsberg*
 
+Typescript does not provide new functionality in the runtime, it offers a number of features that help developers to write more maintainable code than using Javascript. One of the features is implementing modern programming language paradigm like object oriented language.
+
 A program written using typescript must first be compiled into javascript so that it can be executed by a browser or javascript engine.
 
 <img src="assets/Transpillation.png" style="zoom:120%;" />
@@ -59,7 +62,7 @@ As a superset, typescript provides the new advantage of supporting static typing
 
 <img src="assets/Static-Typing.png" style="zoom:120%;" />
 
-Every time we create a new variable we must first define the data type. This protects developers from a bunch of common bugs and security flaws in the code we write. Software development becomes more secure.
+Every time we create a new variable we must first define the data type. Once this type has been specified, we cannot change it. This protects developers from a bunch of common bugs and security flaws in the code we write. Software development becomes more secure.
 
 Below we create a variable name with data type number. However we pass a string literal so that the typescript code will fail when it compiles into javascript :
 
@@ -68,3 +71,8 @@ let fullname: number;
 fullname = "Gun Gun Febrianza"; // compile-time error
 ```
 
+
+
+## Type Annotation
+
+Typescript provide type annotation so any code editor can perform static code analysis, like autocompletion and better refactoring system to improve developer productivity.
