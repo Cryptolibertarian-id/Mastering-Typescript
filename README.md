@@ -5,8 +5,11 @@
 # Table of Contents
 
 - [ ] Typescript
-  - [ ] Why Typescript?
-    - [ ] Static Typing
+  - [x] Why Typescript?
+    - [x] Static Typing
+    - [x] Type Annotation
+  - [ ] New Features?
+    - [ ] 
 
 
 
@@ -38,7 +41,7 @@ If you look at the picture above, you will understand, every Javascript Code is 
 
 Typescript does not provide new functionality in the runtime, it offers a number of features that help developers to write more maintainable code than using Javascript. One of the features is implementing modern programming language paradigm like object oriented language.
 
-A program written using typescript must first be compiled into javascript so that it can be executed by a browser or javascript engine.
+A program written using typescript must first be compiled (technically it should be transpiller) into javascript so that it can be executed by a browser or javascript engine.
 
 <img src="assets/Transpillation.png" style="zoom:120%;" />
 
@@ -54,7 +57,11 @@ As a javascript superset what advantages can typescript provide?
 
 
 
-## Static Typing
+## Why Typescript?
+
+
+
+### Static Typing
 
 Javascript is a language that has dynamic typing characteristics.
 
@@ -73,6 +80,28 @@ fullname = "Gun Gun Febrianza"; // compile-time error
 
 
 
-## Type Annotation
+### Type Annotation
 
 Typescript provide type annotation so any code editor can perform static code analysis, like autocompletion and better refactoring system to improve developer productivity.
+
+
+
+---
+
+
+
+## New Features?
+
+
+
+---
+
+
+
+# Variable Declaration
+
+
+
+## Type Annotations
+
+Typescript uses Type Annotations to explicitly assign data type to an identifier. When an identifier, variable, function, or object has been assigned a type annotation, the identifier can only use the data type that has been given.
