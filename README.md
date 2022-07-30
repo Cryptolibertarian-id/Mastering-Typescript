@@ -9,7 +9,12 @@
     - [x] Static Typing
     - [x] Type Annotation
   - [ ] New Features?
-    - [ ] 
+  - [x] Variable Declaration
+    - [x] Type Annotations
+      - [x] Declare Explicit
+      - [x] Declare Implicit
+  - [ ] Data Types
+    - [ ] Custom Type
 
 
 
@@ -113,3 +118,95 @@ When we declare a variable in typescript, we must add a colon and type annotatio
 <img src="assets/Type-Annotation.png" style="zoom:120%;" />
 
 To declare the data type of a variable we can do it explicitly or implicitly :
+
+<img src="assets/Declare-Type.png" style="zoom:120%;" />
+
+
+
+---
+
+
+
+### Declare Explicit 
+
+Below is an example of using type annotations on primitive data types. The declaration is done explicitly by asserting the given data type :
+
+```typescript
+  const username: string = "Maudy Ayunda";
+  const height: number = 167.13;
+  const isCute: boolean = true;
+```
+
+
+
+---
+
+
+
+### Declare Implicit
+
+Below is an implicit data type declaration, the typescript compiler will auto-type the data based on the given literal :
+
+```typescript
+  const username = "Maudy Ayunda";
+  const height = 167.13;
+  const isCute = true;
+```
+
+
+
+---
+
+
+
+# Data Types
+
+
+
+## Custom Type
+
+With the type keyword we can create a new type or a type alias. Below we create a type alias:
+
+```typescript
+  type Balance = number;
+  type Type = string;
+```
+
+Next we create a new type:
+
+```typescript
+  type Wallet = {
+    name: string;
+    amount: Balance;
+    symbol: Type;
+  };
+```
+
+In the Type Wallet above we use two type aliases for the amount and symbol properties. Next we can create a variable with the Wallet data type:
+
+```typescript
+  let bitcoinWallet: Wallet = {
+    name: "Bitcoin",
+    amount: 5.88800007,
+    symbol: "BTC",
+  };
+```
+
+Furthermore, every time we create a variable of type Wallet make sure we fill in every available property otherwise the result will be an error. If you don't want an error to occur then we have to use optional properties using a question mark.
+
+Look at the code below:
+
+```typescript
+  type CryptoWallet = {
+    name: string;
+    amount: Balance;
+    symbol?: Type;
+  };
+
+  let ethereumWallet: CryptoWallet = {
+    name: "Ethereum",
+    amount: 23.88800007,
+  };
+```
+
+The symbol property uses a question mark, so if we don't fill in the symbol property when creating a variable the error will not occur.
