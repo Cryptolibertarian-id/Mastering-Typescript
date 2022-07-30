@@ -105,3 +105,11 @@ Typescript provide type annotation so any code editor can perform static code an
 ## Type Annotations
 
 Typescript uses Type Annotations to explicitly assign data type to an identifier. When an identifier, variable, function, or object has been assigned a type annotation, the identifier can only use the data type that has been given.
+
+Typescript supports Static Typing which prevents us from creating a generic variable. If we are developing an application using the Deno runtime which uses typescript then we can use the type annotation every time we create an identifier.
+
+When we declare a variable in typescript, we must add a colon and type annotation. Below are the type annotations available in typescript:
+
+<img src="assets/Type-Annotation.png" style="zoom:120%;" />
+
+To declare the data type of a variable we can do it explicitly or implicitly :
