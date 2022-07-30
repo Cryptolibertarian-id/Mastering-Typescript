@@ -44,6 +44,7 @@ class Disease {
 class GreenHouseEffect {
   increaseSeaLevelDamage: number = 200;
   lossWildLifeSpeciesDamage: number = 200;
+  shortAgeFoodDamage: number = 150;
   stormsDamage: number = 250;
   hurricaneDamage: number = 250;
 
@@ -63,8 +64,28 @@ class GreenHouseEffect {
     this.lossWildLifeSpeciesDamage = v;
   }
 
-  public get stormsDamage(): number {
+  public get storms(): number {
     return this.stormsDamage;
+  }
+
+  public set storms(damage: number) {
+    this.stormsDamage = damage;
+  }
+
+  public get hurricane(): number {
+    return this.hurricaneDamage;
+  }
+
+  public set hurricane(damage: number) {
+    this.hurricaneDamage = damage;
+  }
+
+  public get shortAgeFood(): number {
+    return this.shortAgeFoodDamage;
+  }
+
+  public set shortAgeFood(damage: number) {
+    this.shortAgeFoodDamage = damage;
   }
 }
 
