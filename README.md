@@ -163,6 +163,51 @@ Below is an implicit data type declaration, the typescript compiler will auto-ty
 
 
 
+## Reference Types
+
+In javascript, reference types are represented by an object. An object is different from a primitive, an object can have different forms and values. An object is capable of storing various values (hetererogenously).
+
+Objects can store all values that belong to primitive types. This flexible nature makes objects can be used to build a custom data type.
+
+When we interact with web browsers using JavaScript we will be acquainted with the built-in objects, a set of objects built into the web browser that we can use to make it easier to solve problems in programming languages. Below is an example of a built-in object in javascript:
+
+<img src="assets/Reference-Types.png" style="zoom:120%;" />
+
+The built-in object is also available in Node.js/Deno Runtime Engine, below is an example of a simple object that has properties and methods in the javascript :
+
+```javascript
+let Gun = {
+    name: "GGF",
+    ucapSalam: function () {
+        alert("Hello World!!");
+    }
+};
+Gun.ucapSalam(); // Hello World!
+```
+
+Here an example on typescript :
+
+```typescript
+type humanoid = {
+  name: string;
+  sayHello(): string;
+};
+
+let Gun: humanoid = {
+  name: "GGF",
+  sayHello: function () {
+    return "Hello World!!";
+  },
+};
+console.log(Gun.sayHello()); // Hello World!
+```
+
+
+
+---
+
+
+
 ## Custom Type
 
 With the type keyword we can create a new type or a type alias. Below we create a type alias:

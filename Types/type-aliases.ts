@@ -25,3 +25,16 @@ function drawCoordinate(pt: Point) {
 }
 
 drawCoordinate({ x: 10, y: 20 });
+
+type humanoid = {
+  name: string;
+  sayHello(): string;
+};
+
+let Gun: humanoid = {
+  name: "GGF",
+  sayHello: function () {
+    return "Hello World!!";
+  },
+};
+console.log(Gun.sayHello()); // Hello World!
