@@ -68,7 +68,9 @@ As a javascript superset what advantages can typescript provide?
 
 ### Static Typing
 
-Javascript is a language that has dynamic typing characteristics.
+Javascript is a language that has dynamic typing characteristics, to see how the dynamic typing program is working we need to run it. With dynamic typing we cant make a prediction how the code is expected, so here is the typescript came up as an alternative programming paradigm. With Static Type System on typescript we can make a prediction how the code is expected before it runs.
+
+Static Type System help us to understand the shape and behaviors on our code.
 
 As a superset, typescript provides the new advantage of supporting static typing characteristics. So, what are the advantages of static typing?
 
@@ -87,7 +89,7 @@ fullname = "Gun Gun Febrianza"; // compile-time error
 
 ### Type Annotation
 
-Typescript provide type annotation so any code editor can perform static code analysis, like autocompletion and better refactoring system to improve developer productivity.
+Typescript provide type annotation so any code editor can perform static code analysis, like autocompletion and better refactoring system to improve developer productivity. Type Annotation helping the development of static type checker tools.
 
 
 
@@ -160,6 +162,20 @@ Below is an implicit data type declaration, the typescript compiler will auto-ty
 
 
 # Data Types
+
+
+
+## Primitive Types
+
+As discussed earlier, JavaScript has 8 Data Types and 7 of them are called primitives or primitive values.
+
+<img src="assets/Primitive-Types.png" style="zoom:120%;" />
+
+The term primitive is used because it only stores a single value, data is not an object and has no methods. Previously in javascript we could create a primitive type without using a type annotation:
+
+
+
+---
 
 
 
