@@ -9,12 +9,15 @@
     - [x] Static Typing
     - [x] Type Annotation
   - [ ] New Features?
-  - [x] Variable Declaration
-    - [x] Type Annotations
-      - [x] Declare Explicit
-      - [x] Declare Implicit
-  - [ ] Data Types
-    - [ ] Custom Type
+- [x] Variable Declaration
+  - [x] Type Annotations
+    - [x] Declare Explicit
+    - [x] Declare Implicit
+- [ ] Data Types
+  - [ ] Primitive Types
+  - [ ] Reference Types
+  - [ ] Custom Type
+
 
 
 
@@ -172,6 +175,38 @@ As discussed earlier, JavaScript has 8 Data Types and 7 of them are called primi
 <img src="assets/Primitive-Types.png" style="zoom:120%;" />
 
 The term primitive is used because it only stores a single value, data is not an object and has no methods. Previously in javascript we could create a primitive type without using a type annotation:
+
+```javascript
+// strings
+var name = "Gun Gun Febrianza";
+
+// numbers
+var age = 25;
+var price = 1.51;
+
+// boolean
+var isExist = true;
+
+// null
+var objectx = null;
+
+// undefined
+var flag = undefined;
+var ref; // undefined too
+
+```
+
+s
+
+```typescript
+let productName: string;
+let chainID: number;
+let isPowerful: boolean;
+productName = "Polygon Edge";
+chainID = 137;
+isPowerful = true;
+console.log(productName);
+```
 
 
 
