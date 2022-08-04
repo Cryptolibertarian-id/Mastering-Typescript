@@ -17,6 +17,9 @@
   - [ ] Primitive Types
   - [ ] Reference Types
   - [ ] Custom Type
+  - [ ] Enums
+    - [ ] Javascript Way
+    - [ ] Typescript Way
 
 
 
@@ -306,3 +309,181 @@ Look at the code below:
 ```
 
 The symbol property uses a question mark, so if we don't fill in the symbol property when creating a variable the error will not occur.
+
+
+
+## Enums
+
+In programming language we can use enums to define an object that has finite properties to setup information. 
+
+We can learn from javascript version then to typescript version.
+
+### Javascript Way
+
+In javascript we can create enums as object keys, for example :
+
+```javascript
+const blockchain = {
+    Bitcoin: "Bitcoin",
+    Ethereum: "Ethereum",
+    Polkadot: "Polkadot",
+    Polygon: "Polygon",
+    Solana: "Solana"
+}
+```
+
+To get the information we can access specific properties or all properties :
+
+```javascript
+console.log(blockchain); // Get All Properties
+console.log(blockchain.Bitcoin); //Access Enum properties
+```
+
+We can also using number as values :
+
+```javascript
+const NBlockchain = {
+  Bitcoin: 0,
+  Ethereum: 1,
+  Polkadot: 2,
+  Polygon: 3,
+  Solana: 4,
+};
+```
+
+Here we try to compare by number using ternary operator :
+
+```javascript
+0 == NBlockchain.Bitcoin ? console.log(true) : console.log(false); //true
+1 == NBlockchain.Bitcoin ? console.log(true) : console.log(false); //false
+```
+
+To prevent collision we can using symbol object :
+
+```javascript
+const Satoshi1 = Symbol("Satoshi Nakamoto");
+const Satoshi2 = Symbol("Satoshi Nakamoto");
+```
+
+If we compare both it will return false on javascript, note: dont do it on typescript.
+
+The problem with this code is not immutable, we can change the value object that we want to treat as enums :
+
+```javascript
+const SymBlockchain = {
+  Bitcoin: Symbol("Bitcoin"),
+  Ethereum: Symbol("Ethereum"),
+  Polkadot: Symbol("Polkadot"),
+  Polygon: Symbol("Polygon"),
+  Solana: Symbol("Solana"),
+};
+
+console.log(SymBlockchain.Bitcoin); //Symbol(Bitcoin)
+SymBlockchain.Bitcoin = Symbol("Shitcoin");
+console.log(SymBlockchain.Bitcoin); //Symbol(Shitcoin)
+```
+
+To transform above code into immutable object we can use Object.freeze(), here is the example :
+
+```javascript
+const EnumBlockchain = Object.freeze({
+  Bitcoin: Symbol("Bitcoin"),
+  Ethereum: Symbol("Ethereum"),
+  Polkadot: Symbol("Polkadot"),
+  Polygon: Symbol("Polygon"),
+  Solana: Symbol("Solana"),
+});
+```
+
+When we try to change the value :
+
+```javascript
+EnumBlockchain.Bitcoin = Symbol("Bitconnect"); // Error
+```
+
+Its become immutable, you cant change the value.
+
+```
+"Cannot assign to 'Bitcoin' because it is a read-only property.",
+```
+
+
+
+---
+
+
+
+### Typescript Way
+
+#### Numeric Enums
+
+In typescript enums are set of named constants, we can isolate a list of constants to define real world object. Here we create enum Blockchain and all the member will become numeric constant starting from zero.
+
+```typescript
+enum Blockchain {
+  Bitcoin,
+  Ethereum,
+  Polkadot,
+  Polygon,
+  Solana,
+}
+```
+
+If we try to see the constants on enums we will get the number position :
+
+```javascript
+console.log(Blockchain.Bitcoin); //0
+```
+
+We can also setup the order numbering system on enums :
+
+```typescript
+enum Blockchain {
+  Bitcoin,
+  Ethereum = 100,
+  Polkadot,
+  Polygon,
+  Solana,
+}
+
+console.log(Blockchain.Bitcoin); //0
+console.log(Blockchain.Ethereum); //100
+console.log(Blockchain.Polkadot); //101
+console.log(Blockchain.Polygon); //102
+```
+
+
+
+---
+
+
+
+#### String Enums 
+
+String enums dont have auto-increment behavior
+
+```typescript
+enum BlockchainRPC {
+  Server = "SERVER-ADDRESS",
+  Height = "HEIGHT",
+  Latency = "LATENCY",
+  Score = "SCORE",
+}
+
+console.log(BlockchainRPC);
+//{ Server: "SERVER-ADDRESS", Height: "HEIGHT", Latency: "LATENCY", Score: "SCORE" }
+console.log(BlockchainRPC.Latency); //Latency
+```
+
+
+
+---
+
+
+
+#### Heterogenous Enums
+
+
+
+---
+
