@@ -37,4 +37,4 @@ const dataWineMaker: Wine = {
 };
 console.log(contract.makeWine(dataWineMaker, uWineMaker));
 //console.log(contract.getWine(1));
-console.log(contract.ageWine(1, 5, uWineMaker.address));
+//console.log(contract.ageWine(1, 5, uWineMaker.address));

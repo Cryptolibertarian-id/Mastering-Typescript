@@ -64,12 +64,28 @@ export class WineBlockchain {
 
   constructor() {}
 
+  public getBlockchainData() {
+    return polygon;
+  }
+
   public makeWine(param: Wine, id: Caller): string {
     if (id.role === "Owner") {
       return "Nothing to do";
     } else if (id.role === "Winemaker") {
+      let tx: txhash = Date.now().toString();
+      polygon.listTX.push(tx);
+      polygon.data.push({
+        listTX: tx,
+        caller: id.address,
+        method: "makeWine()",
+        sku: this.sku,
+        skuAfter: this.sku++,
+        wines: this.wines,
+        winesAfter: param,
+      });
       this.wines[param.UPC] = param;
       this.sku = this.sku++;
+
       return `Event: Made Wine for ${param.UPC}`;
     } else {
       return "No";
