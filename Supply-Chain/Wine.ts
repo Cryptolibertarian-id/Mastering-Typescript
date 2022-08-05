@@ -14,8 +14,15 @@ enum WineStatus {
   Drunk,
 }
 
+enum roles {
+  OWNER = "Owner",
+  WINEMAKER = "Winemaker",
+  MERCHANT = "Merchant",
+  CONSUMER = "Consumer",
+}
+
 interface caller {
-  address: string;
+  address: solidityAddress;
   role: string;
 }
 
@@ -44,10 +51,18 @@ class WineBlockchain {
   private wines: Wine[] = [];
   public winesHistory: string[];
 
-  public makeWine(param: Wine): string {
-    this.wines[param.UPC] = param;
-    this.sku = this.sku++;
-    return "Event: Made Wine";
+  constructor() {}
+
+  public makeWine(param: Wine, id: caller): string {
+    if (id.role === "Owner") {
+      return "Nothing to do";
+    } else if (id.role === "Winemaker") {
+      this.wines[param.UPC] = param;
+      this.sku = this.sku++;
+      return `Event: Made Wine for ${param.UPC}`;
+    } else {
+      return "No";
+    }
   }
   public getWine(upc: number) {
     return this.wines[upc];
@@ -55,15 +70,38 @@ class WineBlockchain {
   public countWine(): number {
     return this.wines.length;
   }
+  public ageWine(
+    _upc: number,
+    _month: number,
+    _originWinemakerId: solidityAddress
+  ) {
+    if (this.wines[_upc].wineState === WineStatus.Made) {
+      this.wines[_upc].MonthAged = _month;
+      this.wines[_upc].wineState = WineStatus.Aged;
+      return `Event: Aged Wine for ${_upc}`;
+    } else {
+      return "Not in made state!";
+    }
+  }
 }
 
-let x = new WineBlockchain();
-const dataWine: Wine = {
+let uOwnerContract: caller = {
+  address: "0x000",
+  role: roles.OWNER,
+};
+
+let uWineMaker: caller = {
+  address: "0x001",
+  role: roles.WINEMAKER,
+};
+
+let contract = new WineBlockchain();
+const dataWineMaker: Wine = {
   SKU: 1,
   UPC: 1,
   MonthAged: 5,
-  OwnerId: "0x001",
-  originWinemakerId: "0x002",
+  OwnerId: uWineMaker.address,
+  originWinemakerId: uWineMaker.address,
   originWinemakerName: "GunS-Wine",
   originWinemakerInformation: "single malt",
   originWinemakerLatitude: "x.xx.xx.xx",
@@ -72,10 +110,10 @@ const dataWine: Wine = {
   productNotes: "August Series",
   productPrice: 5000,
   productFinalPrice: 7000,
-  wineState: WineStatus.Aged,
+  wineState: WineStatus.Made,
   wineMerchantId: "0x003",
   consumerId: "0x004",
 };
-console.log(x.makeWine(dataWine));
-console.log(x.getWine(1));
-console.log(x.countWine());
+console.log(contract.makeWine(dataWineMaker, uWineMaker));
+//console.log(contract.getWine(1));
+console.log(contract.ageWine(1, 5, uWineMaker.address));
