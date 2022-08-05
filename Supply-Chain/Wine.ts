@@ -36,8 +36,8 @@ const dataWineMaker: Wine = {
   consumerId: "0x004",
 };
 console.log(contract.makeWine(dataWineMaker, uWineMaker));
+console.log(contract.ageWine(1, 5, uWineMaker));
 const BlockchainData = contract.getBlockchainData();
-//console.log(BlockchainData);
+console.log(BlockchainData);
 
 //console.log(contract.getWine(1));
-//console.log(contract.ageWine(1, 5, uWineMaker.address));

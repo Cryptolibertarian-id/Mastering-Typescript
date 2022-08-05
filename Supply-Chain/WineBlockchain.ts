@@ -70,7 +70,7 @@ export class WineBlockchain {
 
   public makeWine(param: Wine, id: Caller): string {
     if (id.role === "Owner") {
-      return "Nothing to do";
+      return "Owner Nothing to do";
     } else if (id.role === "Winemaker") {
       let tx: txhash = Date.now().toString();
       polygon.listTX.push(tx);
@@ -86,7 +86,7 @@ export class WineBlockchain {
       this.wines[param.UPC] = param;
       this.sku = this.sku++;
 
-      return `Event: Made Wine for ${param.UPC}`;
+      return `Event: Made Wine for ${param.UPC}, txhash ${tx}`;
     } else {
       return "No";
     }
@@ -99,10 +99,11 @@ export class WineBlockchain {
   }
   public ageWine(_upc: number, _month: number, id: Caller) {
     if (id.role === "Owner") {
+      return "Owner Nothing to do";
     } else if (id.role === "Winemaker") {
       if (
         this.wines[_upc].wineState === WineStatus.Made &&
-        this.wines[_upc].originWinemakerId === id.role
+        this.wines[_upc].originWinemakerId === id.address
       ) {
         let tx: txhash = Date.now().toString();
         polygon.listTX.push(tx);
@@ -117,11 +118,12 @@ export class WineBlockchain {
         });
         this.wines[_upc].MonthAged = _month;
         this.wines[_upc].wineState = WineStatus.Aged;
-        return `Event: Aged Wine for ${_upc}`;
+        return `Event: Aged Wine for ${_upc}, txhash ${tx}`;
       } else {
         return "Not in made state!";
       }
     } else {
+      return "";
     }
   }
 }
