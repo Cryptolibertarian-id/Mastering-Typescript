@@ -45,9 +45,12 @@ class WineBlockchain {
   public winesHistory: string[];
 
   public makeWine(param: Wine): string {
-    this.wines.push(param);
+    this.wines[param.UPC] = param;
     this.sku = this.sku++;
     return "Event: Made Wine";
+  }
+  public getWine(upc: number) {
+    return this.wines[upc];
   }
   public countWine(): number {
     return this.wines.length;
@@ -74,4 +77,5 @@ const dataWine: Wine = {
   consumerId: "0x004",
 };
 console.log(x.makeWine(dataWine));
+console.log(x.getWine(1));
 console.log(x.countWine());
