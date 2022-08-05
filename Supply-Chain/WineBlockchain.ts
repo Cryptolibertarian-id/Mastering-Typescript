@@ -104,6 +104,17 @@ export class WineBlockchain {
         this.wines[_upc].wineState === WineStatus.Made &&
         this.wines[_upc].originWinemakerId === id.role
       ) {
+        let tx: txhash = Date.now().toString();
+        polygon.listTX.push(tx);
+        polygon.data.push({
+          listTX: tx,
+          caller: id.address,
+          method: "ageWine()",
+          wineMonthAged: this.wines[_upc].MonthAged,
+          wineMonthAgedAfter: _month,
+          wineState: this.wines[_upc].wineState,
+          wineStateAfter: WineStatus.Aged,
+        });
         this.wines[_upc].MonthAged = _month;
         this.wines[_upc].wineState = WineStatus.Aged;
         return `Event: Aged Wine for ${_upc}`;
