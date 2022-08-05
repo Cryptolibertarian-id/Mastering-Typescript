@@ -1,3 +1,4 @@
+const { createHash } = await import("node:crypto");
 import {
   WineBlockchain,
   Wine,
@@ -38,6 +39,6 @@ const dataWineMaker: Wine = {
 console.log(contract.makeWine(dataWineMaker, uWineMaker));
 console.log(contract.ageWine(1, 5, uWineMaker));
 const BlockchainData = contract.getBlockchainData();
-console.log(BlockchainData);
+//console.log(BlockchainData);
 
 //console.log(contract.getWine(1));
