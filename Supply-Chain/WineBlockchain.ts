@@ -60,7 +60,7 @@ export class WineBlockchain {
   sku: number = 0;
   status: WineStatus = 0;
   private wines: Wine[] = [];
-  public winesHistory: string[];
+  public winesHistory: string[] = [];
 
   constructor() {}
 
@@ -97,17 +97,20 @@ export class WineBlockchain {
   public countWine(): number {
     return this.wines.length;
   }
-  public ageWine(
-    _upc: number,
-    _month: number,
-    _originWinemakerId: solidityAddress
-  ) {
-    if (this.wines[_upc].wineState === WineStatus.Made) {
-      this.wines[_upc].MonthAged = _month;
-      this.wines[_upc].wineState = WineStatus.Aged;
-      return `Event: Aged Wine for ${_upc}`;
+  public ageWine(_upc: number, _month: number, id: Caller) {
+    if (id.role === "Owner") {
+    } else if (id.role === "Winemaker") {
+      if (
+        this.wines[_upc].wineState === WineStatus.Made &&
+        this.wines[_upc].originWinemakerId === id.role
+      ) {
+        this.wines[_upc].MonthAged = _month;
+        this.wines[_upc].wineState = WineStatus.Aged;
+        return `Event: Aged Wine for ${_upc}`;
+      } else {
+        return "Not in made state!";
+      }
     } else {
-      return "Not in made state!";
     }
   }
 }
