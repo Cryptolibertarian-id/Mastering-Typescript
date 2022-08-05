@@ -39,11 +39,18 @@ interface Wine {
 }
 
 class WineBlockchain {
+  sku: number = 0;
   status: WineStatus = 0;
   private wines: Wine[] = [];
+  public winesHistory: string[];
 
-  public makeWine(param: Wine) {
+  public makeWine(param: Wine): string {
     this.wines.push(param);
+    this.sku = this.sku++;
+    return "Event: Made Wine";
+  }
+  public countWine(): number {
+    return this.wines.length;
   }
 }
 
@@ -67,3 +74,4 @@ const dataWine: Wine = {
   consumerId: "0x004",
 };
 console.log(x.makeWine(dataWine));
+console.log(x.countWine());
