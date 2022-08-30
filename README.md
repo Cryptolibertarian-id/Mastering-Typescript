@@ -481,9 +481,15 @@ console.log(BlockchainRPC.Latency); //Latency
 
 
 
-#### Heterogenous Enums
+# Time Programming
 
 
 
----
+## Timestamp
+
+In javascript, to get current timestamp you can execute this statement :
+
+```javascript
+Date.now(); //1661845421947
+```
 

@@ -1,3 +1,5 @@
+import { createHash } from "crypto";
+const hash = createHash("sha256");
 interface BlockchainState {
   listTX: txhash[];
   data: any[];
@@ -72,7 +74,9 @@ export class WineBlockchain {
     if (id.role === "Owner") {
       return "Owner Nothing to do";
     } else if (id.role === "Winemaker") {
-      let tx: txhash = Date.now().toString();
+      let tx: txhash = hash
+        .update(JSON.stringify(param) + JSON.stringify(id))
+        .digest("hex");
       polygon.listTX.push(tx);
       polygon.data.push({
         listTX: tx,
@@ -105,7 +109,10 @@ export class WineBlockchain {
         this.wines[_upc].wineState === WineStatus.Made &&
         this.wines[_upc].originWinemakerId === id.address
       ) {
-        let tx: txhash = Date.now().toString();
+        let tx: txhash = hash
+          .update(_upc.toString() + JSON.stringify(id))
+          .copy()
+          .digest("hex");
         polygon.listTX.push(tx);
         polygon.data.push({
           listTX: tx,
