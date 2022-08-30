@@ -18,7 +18,7 @@ const first = arrCrypto.find((obj) => {
 console.log(first);
 
 const index = arrCrypto.findIndex((obj) => {
-  return obj.blockchain == "Polygon";
+  return obj.id == 3;
 });
 console.log(index);
 

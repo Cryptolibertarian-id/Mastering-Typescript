@@ -681,6 +681,46 @@ const foundArStr = arrayStr.findIndex((element) = > element === "Apple");
 console.log(foundArStr);
 ```
 
+Output :
+
+```
+1
+```
+
+We know how to find index from array of primitive, but how to find index any object on array of object? below is an array of object example :
+
+```typescript
+interface crypto {
+  id: number;
+  blockchain: string;
+  price: number;
+}
+
+const arrCrypto: crypto[] = [
+  { id: 1, blockchain: "Polygon", price: 550 },
+  { id: 2, blockchain: "Polkadot", price: 770 },
+  { id: 3, blockchain: "Bitcoin", price: 1520 },
+  { id: 4, blockchain: "Polygon", price: 340 },
+];
+```
+
+Here is an example to find index object by their property :
+
+```typescript
+const index = arrCrypto.findIndex((obj) => {
+  return obj.id == 3;
+});
+console.log(index);
+```
+
+Output :
+
+```
+1
+```
+
+
+
 
 
 ---
@@ -695,6 +735,12 @@ Here is an example code using **filter() method** to get multiple elements with 
 const arrayNum : number[] = [30, 44, 55, 22, 44, 11]; 
 const foundArrNum : number[] = arrayNum.filter((element) => element > 40);
 console.table(foundArrNum);
+```
+
+Output :
+
+```
+
 ```
 
 
