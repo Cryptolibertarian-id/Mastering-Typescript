@@ -549,12 +549,24 @@ const foundArrNum = arrayNum.find((element) => element > 44);
 console.log(foundArrNum);
 ```
 
+Output :
+
+```
+55
+```
+
 Here is an example code using **find() method** to get the string element with literal value **"Apple"** :
 
 ```javascript
 const arrayStr : string[] = ["Banana", "Apple", "Melon"];
 const foundArStr = arrayStr.find((element) = > element === "Apple");
 console.log(foundArStr);
+```
+
+Output :
+
+```
+1
 ```
 
 
@@ -571,6 +583,22 @@ here is an example code using **findIndex() method** to get the index of literal
 const arrayStr : string[] = ["Banana", "Apple", "Melon"];
 const foundArStr = arrayStr.findIndex((element) = > element === "Apple");
 console.log(foundArStr);
+```
+
+
+
+---
+
+
+
+#### Filter Method
+
+Here is an example code using filter() method to get multiple elements with number that bigger more than 40 :
+
+```javascript
+const arrayNum : number[] = [30, 44, 55, 22, 44, 11]; 
+const foundArrNum : number[] = arrayNum.filter((element) => element > 40);
+console.table(foundArrNum);
 ```
 
 

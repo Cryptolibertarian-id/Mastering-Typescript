@@ -5,3 +5,6 @@ console.log(foundArrNum);
 const arrayString: string[] = ["Banana", "Apple", "Strawberry"];
 const foundArrStr = arrayString.findIndex((element) => element === "Apple");
 console.log(foundArrStr);
+
+const filterArrNum: number[] = arrayNum.filter((element) => element > 40);
+console.table(filterArrNum);
