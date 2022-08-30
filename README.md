@@ -481,6 +481,44 @@ console.log(BlockchainRPC.Latency); //Latency
 
 
 
+# Collection
+
+
+
+----
+
+
+
+## What is Collections?
+
+
+
+----
+
+
+
+## What is Indexed Collections?
+
+
+
+### Array
+
+Before we create and use an array, we need to understood that array has a characteristics of iterable, destructable and does not support keyed. According to David Flanagan, the author of Javascript - The Definitive Guide (2002) book, array is data type to store value with number or numbered values. Value that has been assigned by number called element and the number of that value is called index. An array can store primitive type and object, also array within array.
+
+Here is an example of one-dimensional array : 
+
+<img src="assets/Array-One-Dimensional.jpg" style="zoom:90%;" />
+
+In javascript 
+
+
+
+---
+
+
+
+
+
 # Time Programming
 
 
