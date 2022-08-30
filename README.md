@@ -487,9 +487,16 @@ console.log(BlockchainRPC.Latency); //Latency
 
 ## Timestamp
 
-In javascript, to get current timestamp you can execute this statement :
+In javascript, to get current timestamp in **MILLISECONDS** you can execute this statement :
 
 ```javascript
 Date.now(); //1661845421947
 ```
 
+The timestamp is UNIX Timestamp, a seconds since january 1, 1970 UTC. If you want to get the number of seconds, we need to divide the result by 1000 :
+
+```javascript
+return Math.floor(Date.now()/1000);
+```
+
+ 
