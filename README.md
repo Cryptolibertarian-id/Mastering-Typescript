@@ -545,6 +545,14 @@ Here is basic array methods if we want to add and remove element to an array :
 
 #### Push Method 
 
+<img src="assets/Array-Methods-Push.png" style="zoom:110%;" />
+
+Here is an example code using **push() method** to add new element in the last position:
+
+```javascript
+
+```
+
 
 
 ---
@@ -556,6 +564,12 @@ Here is basic array methods if we want to add and remove element to an array :
 
 
 <img src="assets/Array-Methods-Pop.png" style="zoom:110%;" />
+
+Here is an example code using **pop() method** to remove the last element :
+
+```javascript
+
+```
 
 
 
