@@ -11,8 +11,13 @@ const first = arrBlockchain.find((obj) => {
 });
 console.log(first);
 
+const index = arrBlockchain.findIndex((obj) => {
+  return obj.blockchain == "Polygon";
+});
+console.log(index);
+
 //find multiple object
-const all = arrBlockchain.filter((obj) => {
+const all = arrBlockchain.filter((obj, index, arr) => {
   return obj.blockchain === "Polygon";
 });
 

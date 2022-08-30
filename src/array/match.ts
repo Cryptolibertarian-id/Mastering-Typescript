@@ -30,6 +30,24 @@ let order3: order = {
   timestamp: Date.now(),
 };
 
-const bidArray: order[] = [order3, order1, order2];
+let order4: order = {
+  id: "4",
+  order_type: "bid",
+  price: 101.48,
+  quantity: 293.0,
+  timestamp: Date.now(),
+};
+
+const bidArray: order[] = [order3, order1, order2, order4];
+
+console.table(bidArray);
+const filtered = bidArray.filter((obj) => {
+  return obj.price == 101.48;
+});
+console.log(filtered);
+
+bidArray.sort((a, b) => {
+  return b.price - a.price;
+});
 
 console.table(bidArray);

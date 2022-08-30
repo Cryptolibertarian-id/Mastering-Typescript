@@ -657,7 +657,7 @@ console.log(foundArStr);
 
 #### Filter Method
 
-Here is an example code using filter() method to get multiple elements with number that bigger more than 40 :
+Here is an example code using **filter() method** to get multiple elements with number that bigger more than 40 :
 
 ```javascript
 const arrayNum : number[] = [30, 44, 55, 22, 44, 11]; 
