@@ -533,9 +533,59 @@ Here is an example of one-dimensional array :
 
 ### Array Property & Methods 
 
+Here is basic array methods if we want to add and remove element to an array :
+
+<img src="assets/Array-Methods-Basic.png" style="zoom:110%;" />
+
+
+
+---
+
+
+
+#### Push Method 
+
+
+
+---
+
+
+
+#### Pop Method 
+
+
+
+<img src="assets/Array-Methods-Pop.png" style="zoom:110%;" />
+
+
+
+---
+
+
+
+#### Shift Method 
+
+
+
+---
+
+
+
+#### Unshift Method
+
+
+
+---
+
+
+
 Here is simplified array methods if we want to find single or multiple element on array of primitives by value, we can also find on array of primitives to get their index.
 
 <img src="assets/Array-Methods-Find.png" style="zoom:110%;" />
+
+
+
+---
 
 
 
