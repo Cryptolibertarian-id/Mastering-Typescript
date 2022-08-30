@@ -633,6 +633,38 @@ Output :
 1
 ```
 
+We know how to find value from array of primitive, but how to find any object on array of object? below is an array of object example :
+
+```typescript
+interface crypto {
+  id: number;
+  blockchain: string;
+  price: number;
+}
+
+const arrCrypto: crypto[] = [
+  { id: 1, blockchain: "Polygon", price: 550 },
+  { id: 2, blockchain: "Polkadot", price: 770 },
+  { id: 3, blockchain: "Bitcoin", price: 1520 },
+  { id: 4, blockchain: "Polygon", price: 340 },
+];
+```
+
+Here is an example to find object by their property :
+
+```typescript
+const first = arrCrypto.find((obj) => {
+    return obj.blockchain == "Polygon";
+})
+console.log(first)
+```
+
+Output :
+
+```
+0
+```
+
 
 
 ----

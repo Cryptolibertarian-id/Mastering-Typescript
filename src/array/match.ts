@@ -46,6 +46,7 @@ const filtered = bidArray.filter((obj) => {
 });
 console.log(filtered);
 
+// Sorting
 bidArray.sort((a, b) => {
   return b.price - a.price;
 });
