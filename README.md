@@ -509,7 +509,79 @@ Here is an example of one-dimensional array :
 
 <img src="assets/Array-One-Dimensional.jpg" style="zoom:90%;" />
 
-In javascript 
+
+
+----
+
+
+
+### Create Array 
+
+
+
+----
+
+
+
+### Iterate Array 
+
+
+
+----
+
+
+
+### Array Property & Methods 
+
+Here is simplified array methods if we want to find single or multiple element on array of primitives by value, we can also find on array of primitives to get their index.
+
+<img src="assets/Array-Methods-Find.png" style="zoom:110%;" />
+
+Here is an example code using find() method to get the number element bigger than 44 :
+
+```javascript
+const arrayNum : number[] = [30, 44, 55, 22, 44, 11];
+const foundArrNum = arrayNum.find((element) => element > 44);
+console.log(foundArrNum);
+```
+
+Here is an example code using find() method to get the string element with literal value "Apple" :
+
+```javascript
+const arrayStr : string[] = ["Banana", "Apple", "Melon"];
+const foundArStr = arrayStr.find((element) = > element === "Apple");
+console.log(foundArStr);
+```
+
+
+
+
+
+---
+
+
+
+### Multidimensional Array 
+
+
+
+---
+
+
+
+### Matrix 
+
+
+
+---
+
+
+
+### Array of Interface
+
+
+
+
 
 
 
