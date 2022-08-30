@@ -537,7 +537,11 @@ Here is simplified array methods if we want to find single or multiple element o
 
 <img src="assets/Array-Methods-Find.png" style="zoom:110%;" />
 
-Here is an example code using find() method to get the number element bigger than 44 :
+
+
+#### Find Method
+
+Here is an example code using **find() method** to get the number element bigger than 44 :
 
 ```javascript
 const arrayNum : number[] = [30, 44, 55, 22, 44, 11];
@@ -545,7 +549,7 @@ const foundArrNum = arrayNum.find((element) => element > 44);
 console.log(foundArrNum);
 ```
 
-Here is an example code using find() method to get the string element with literal value "Apple" :
+Here is an example code using **find() method** to get the string element with literal value **"Apple"** :
 
 ```javascript
 const arrayStr : string[] = ["Banana", "Apple", "Melon"];
@@ -554,6 +558,20 @@ console.log(foundArStr);
 ```
 
 
+
+----
+
+
+
+#### FindIndex Method
+
+here is an example code using **findIndex() method** to get the index of literal value **"Apple"** :
+
+```javascript
+const arrayStr : string[] = ["Banana", "Apple", "Melon"];
+const foundArStr = arrayStr.findIndex((element) = > element === "Apple");
+console.log(foundArStr);
+```
 
 
 
