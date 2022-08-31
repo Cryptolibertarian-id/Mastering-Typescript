@@ -533,9 +533,13 @@ Here is an example of one-dimensional array :
 
 ### Array Property & Methods 
 
-Here is basic array methods if we want to add and remove element to an array :
+Here is basic array methods if we want to add and remove element to an array using FIFO or LIFO style :
 
 <img src="assets/Array-Methods-Basic.png" style="zoom:110%;" />
+
+We can execute this operations also on array of objects :
+
+<img src="assets/Array-Methods-Basic-Objects.png" style="zoom:110%;" />
 
 
 
