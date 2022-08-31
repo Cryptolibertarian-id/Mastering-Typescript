@@ -615,7 +615,7 @@ We can execute this operations also on array of objects :
 
 #### Find Method
 
-Here is an example code using **find() method** to get the number element bigger than 44 :
+Here is an example code using **find() method** to get the value of the first element, in this case we want to get number element bigger than 44 :
 
 ```typescript
 const arrayNum: number[] = [30, 44, 55, 22, 44, 11, 60];
@@ -717,8 +717,6 @@ Output :
 
 
 
-
-
 ----
 
 
@@ -739,7 +737,7 @@ We can execute this operations also on array of objects :
 
 #### FindIndex Method
 
-Here is an example code using **findIndex() method** to get the index of literal value **"Apple"** :
+Here is an example code using **findIndex() method** to get the first index of literal value **"Apple"** :
 
 ```javascript
 const arrayStr : string[] = ["Banana", "Apple", "Melon"];
@@ -753,7 +751,7 @@ Output :
 1
 ```
 
-We know how to find index from array of primitive, but how to find index any object on array of objects? below is an array of objects example :
+We know how to find first index from array of primitive, but how to find index any object on array of objects? below is an array of objects example :
 
 ```typescript
 interface crypto {
@@ -773,7 +771,7 @@ const arrCrypto: crypto[] = [
 Here is an example to find index object by their property :
 
 ```typescript
-const index = arrCrypto.findIndex((obj) => {
+const index: number = arrCrypto.findIndex((obj: crypto) => {
   return obj.id == 3;
 });
 console.log(index);
@@ -782,7 +780,7 @@ console.log(index);
 Output :
 
 ```
-1
+2
 ```
 
 
@@ -793,10 +791,18 @@ Output :
 
 #### FindLastIndex Method
 
-Here is an example code using **findLastIndex() method** to get the index of literal value **"Apple"** :
+At the time the author write this book, for **findLastIndex() method** there is caveat. Yet, this method still **not supported in Node.js Environment**. You can execute on browser environment. Here is an example code using **findLastIndex() method** to get the last index of literal value **"Apple"** :
 
 ```typescript
+var arrayString: string[] = ["Banana", "Apple", "Strawberry", "Apple"];
+const foundArrStr = arrayString.findLastIndex((element) => element === "Apple");
+console.log(foundArrStr); //3
+```
 
+Output :
+
+```
+3
 ```
 
 
