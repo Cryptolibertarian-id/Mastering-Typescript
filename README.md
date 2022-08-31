@@ -597,7 +597,7 @@ Here is an example code using **pop() method** to remove the last element :
 
 
 
-Here is simplified array methods if we want to find single or multiple element on array of primitives by value.
+Here is simplified array methods if we want to find first and last element on array of primitives by value.
 
 <img src="assets/Array-Methods-Find.png" style="zoom:110%;" />
 
@@ -723,15 +723,13 @@ Output :
 
 
 
-Here is simplified array methods if we want to find single or multiple element on array of primitives by value.
+Here is simplified array methods if we want to find first and last index on array of primitives by value.
 
 <img src="assets/Array-Methods-Find-Index.png" style="zoom:110%;" />
 
 We can execute this operations also on array of objects :
 
-
-
-<img src="assets/Array-Methods-Find-Objects.png" style="zoom:110%;" />
+<img src="assets/Array-Methods-Find-Index-Objects.png" style="zoom:110%;" />
 
 
 
@@ -741,7 +739,7 @@ We can execute this operations also on array of objects :
 
 #### FindIndex Method
 
-here is an example code using **findIndex() method** to get the index of literal value **"Apple"** :
+Here is an example code using **findIndex() method** to get the index of literal value **"Apple"** :
 
 ```javascript
 const arrayStr : string[] = ["Banana", "Apple", "Melon"];
@@ -786,6 +784,22 @@ Output :
 ```
 1
 ```
+
+
+
+---
+
+
+
+#### FindLastIndex Method
+
+Here is an example code using **findLastIndex() method** to get the index of literal value **"Apple"** :
+
+```typescript
+
+```
+
+
 
 
 
