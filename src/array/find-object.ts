@@ -16,15 +16,3 @@ const first = arrCrypto.find((obj) => {
   return obj.blockchain == "Polygon";
 });
 console.log(first);
-
-const index = arrCrypto.findIndex((obj) => {
-  return obj.id == 3;
-});
-console.log(index);
-
-//find multiple object
-const all = arrCrypto.filter((obj, index, arr) => {
-  return obj.blockchain === "Polygon";
-});
-
-console.table(all);
