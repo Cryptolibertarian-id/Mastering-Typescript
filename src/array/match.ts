@@ -38,7 +38,7 @@ let order4: order = {
   timestamp: Date.now(),
 };
 
-const bidArray: order[] = [order3, order1, order2, order4];
+var bidArray: order[] = [order3, order1, order2, order4];
 
 console.table(bidArray);
 const filtered = bidArray.filter((obj) => {
