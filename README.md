@@ -617,30 +617,16 @@ We can execute this operations also on array of objects :
 
 Here is an example code using **find() method** to get the number element bigger than 44 :
 
-```javascript
-const arrayNum : number[] = [30, 44, 55, 22, 44, 11];
-const foundArrNum = arrayNum.find((element) => element > 44);
-console.log(foundArrNum);
+```typescript
+const arrayNum: number[] = [30, 44, 55, 22, 44, 11, 60];
+const firstFound = arrayNum.find((element) => element > 44);
+console.log(firstFound);
 ```
 
 Output :
 
 ```
 55
-```
-
-Here is an example code using **find() method** to get the string element with literal value **"Apple"** :
-
-```javascript
-const arrayStr : string[] = ["Banana", "Apple", "Melon"];
-const foundArStr = arrayStr.find((element) = > element === "Apple");
-console.log(foundArStr);
-```
-
-Output :
-
-```
-1
 ```
 
 We know how to find value from array of primitive, but how to find any object on array of objects? below is an array of objects example :
@@ -671,9 +657,65 @@ console.log(first)
 
 Output :
 
+```json
+{ id: 1, blockchain: 'Polygon', price: 550 }
 ```
-0
+
+
+
+----
+
+
+
+#### FindLast Method
+
+At the time the author write this book, for **FindLast() method** there is caveat. Yet, this method still **not supported in Node.js Environment**. You can execute on browser environment. Here is an example code using **FindLast() method** :
+
+```typescript
+const arrayNum: number[] = [30, 44, 55, 22, 44, 11, 60];
+const firstFound = arrayNum.findLast((element) => element > 44);
+console.log(firstFound);
 ```
+
+Output :
+
+```
+60
+```
+
+We know how to find last value from array of primitive, but how to find last object on array of objects? below is an array of objects example :
+
+```typescript
+interface crypto {
+  id: number;
+  blockchain: string;
+  price: number;
+}
+
+const arrCrypto: crypto[] = [
+  { id: 1, blockchain: "Polygon", price: 550 },
+  { id: 2, blockchain: "Polkadot", price: 770 },
+  { id: 3, blockchain: "Bitcoin", price: 1520 },
+  { id: 4, blockchain: "Polygon", price: 340 },
+];
+```
+
+Here is an example to find last object by their property :
+
+```typescript
+const first = arrCrypto.findLast((obj) => {
+    return obj.blockchain == "Polygon";
+})
+console.log(first)
+```
+
+Output :
+
+```json
+{ id: 4, blockchain: 'Polygon', price: 340 }
+```
+
+
 
 
 
