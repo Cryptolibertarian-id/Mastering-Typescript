@@ -597,7 +597,7 @@ Here is an example code using **pop() method** to remove the last element :
 
 
 
-Here is simplified array methods if we want to find single or multiple element on array of primitives by value, we can also find on array of primitives to get their index.
+Here is simplified array methods if we want to find single or multiple element on array of primitives by value.
 
 <img src="assets/Array-Methods-Find.png" style="zoom:110%;" />
 
@@ -716,6 +716,22 @@ Output :
 ```
 
 
+
+
+
+----
+
+
+
+Here is simplified array methods if we want to find single or multiple element on array of primitives by value.
+
+<img src="assets/Array-Methods-Find-Index.png" style="zoom:110%;" />
+
+We can execute this operations also on array of objects :
+
+
+
+<img src="assets/Array-Methods-Find-Objects.png" style="zoom:110%;" />
 
 
 
