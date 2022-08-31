@@ -27,4 +27,4 @@ const all = arrCrypto.filter((obj, index, arr) => {
   return obj.blockchain === "Polygon";
 });
 
-console.log(all);
+console.table(all);

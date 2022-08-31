@@ -597,6 +597,12 @@ Here is simplified array methods if we want to find single or multiple element o
 
 <img src="assets/Array-Methods-Find.png" style="zoom:110%;" />
 
+We can execute this operations also on array of objects :
+
+
+
+<img src="assets/Array-Methods-Find-Objects.png" style="zoom:110%;" />
+
 
 
 ---
@@ -633,7 +639,7 @@ Output :
 1
 ```
 
-We know how to find value from array of primitive, but how to find any object on array of object? below is an array of object example :
+We know how to find value from array of primitive, but how to find any object on array of objects? below is an array of objects example :
 
 ```typescript
 interface crypto {
@@ -687,7 +693,7 @@ Output :
 1
 ```
 
-We know how to find index from array of primitive, but how to find index any object on array of object? below is an array of object example :
+We know how to find index from array of primitive, but how to find index any object on array of objects? below is an array of objects example :
 
 ```typescript
 interface crypto {
@@ -721,8 +727,6 @@ Output :
 
 
 
-
-
 ---
 
 
@@ -740,7 +744,51 @@ console.table(foundArrNum);
 Output :
 
 ```
+┌───────┬────────┐
+│ (idx) │ Values │
+├───────┼────────┤
+│     0 │     44 │
+│     1 │     55 │
+│     2 │     44 │
+└───────┴────────┘
+```
 
+We know how to filter from array of primitive, but how to filter any object on array of objects? below is an array of objects example :
+
+```typescript
+interface crypto {
+  id: number;
+  blockchain: string;
+  price: number;
+}
+
+const arrCrypto: crypto[] = [
+  { id: 1, blockchain: "Polygon", price: 550 },
+  { id: 2, blockchain: "Polkadot", price: 770 },
+  { id: 3, blockchain: "Bitcoin", price: 1520 },
+  { id: 4, blockchain: "Polygon", price: 340 },
+];
+```
+
+Here is an example to filter object by their property :
+
+```typescript
+const all = arrCrypto.filter((obj) => {
+  return obj.blockchain === "Polygon";
+});
+
+console.table(all);
+```
+
+Output :
+
+```
+┌───────┬────┬────────────┬───────┐
+│ (idx) │ id │ blockchain │ price │
+├───────┼────┼────────────┼───────┤
+│     0 │  1 │ "Polygon"  │   550 │
+│     1 │  4 │ "Polygon"  │   340 │
+└───────┴────┴────────────┴───────┘
 ```
 
 
