@@ -516,7 +516,111 @@ console.log(hello); //Prints Hello World!
 hello = "Hello Maudy!"; // allowed
 ```
 
-hello variable is being known and interpreted in the global scope environment.
+**hello variable** is being known and interpreted in the global scope environment. This accessibility is dangerous, since potential conflict and error in the typescript project could happen. There is possibility any code will be overwritten and modified without we know.
+
+To handle this problem, typescript offer modules and namespaces concept to prevent any code into global scope. Modules and Namespaces concept also helping for maintain large scale codebase.
+
+The goals of modules is to isolate within local scope, so any variable, function, class that has been declared inside the modules cant be accessed by external modules. We can create module using **export keyword** and for using module there is **import keyword**.
+
+In typescript, any file with top-level export or import is recognized as modules. Below is an example of module inside file1.ts :
+
+```typescript
+export const hello : string = "Hello World!";
+```
+
+If we execute file2.ts, then we will get error :
+
+```typescript
+console.log(hello); //Error: cannot find 'hello'
+
+hello = "Hello Maudy!"; // allowed
+```
+
+
+
+---
+
+
+
+## Export 
+
+Try to create file **Employee.ts** and write this code :
+
+```typescript
+export let age: number = 30;
+export class Employee {
+  employeeID: number;
+  employeeName: string;
+  constructor(name: string, code: number) {
+    this.employeeName = name;
+    this.employeeID = code;
+  }
+  printEmployee() {
+    console.log(
+      "Employee ID: " +
+        this.employeeID +
+        ", Employee Name: " +
+        this.employeeName
+    );
+  }
+}
+let companyName: string = "The Boring Company";
+```
+
+
+
+----
+
+
+
+## Import - Single Module 
+
+Try to create file **MainEmployee.ts** and write this code :
+
+```typescript
+import { Employee } from "./Employee";
+
+let employeeObject = new Employee("Gun Gun Febrianza", 1);
+employeeObject.printEmployee();
+```
+
+Above code is an example of single module import.
+
+
+
+---
+
+
+
+
+
+## Import - Entire Module 
+
+Here is an example to import entire module :
+
+```typescript
+import * as EMP from "./Employee";
+
+let employeeObject = new EMP.Employee("Gun Gun Febrianza", 1);
+employeeObject.printEmployee();
+```
+
+
+
+----
+
+
+
+## Import - Rename Module
+
+Here is an example how to rename imported module :
+
+```typescript
+import { Employee as manpower } from "./Employee";
+
+let employeeObject = new manpower("Gun Gun Febrianza", 1);
+employeeObject.printEmployee();
+```
 
 
 
