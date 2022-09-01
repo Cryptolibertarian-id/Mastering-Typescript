@@ -20,6 +20,23 @@
   - [ ] Enums
     - [ ] Javascript Way
     - [ ] Typescript Way
+      - [ ] Numeric Enums
+      - [ ] String Enums
+- [ ] Modules
+- [ ] Collection
+  - [ ] What is Collections?
+  - [ ] What is Indexed Collections?
+    - [ ] Array
+    - [ ] Create Array
+    - [ ] Iterate Array
+    - [ ] Array Property & Methods
+    - [ ] Multidimensional Array
+    - [ ] Matrix
+    - [ ] Array of Interface
+
+- [ ] Time Programming
+  - [ ] Timestamp
+
 
 
 
@@ -481,6 +498,32 @@ console.log(BlockchainRPC.Latency); //Latency
 
 
 
+# Modules
+
+Any typescript code that we wrote is actually live on the global scope, so if we have several files on one project, all variables, functions, class will be interpreted in the same environment within global scope. Any written typescript code on one file can be accessed by another file and vice versa.
+
+For Example, when we create file1.ts with this code :
+
+```typescript
+const hello : string = "Hello World!";
+```
+
+ and then we create another file2.ts with this code :
+
+```typescript
+console.log(hello); //Prints Hello World!
+
+hello = "Hello Maudy!"; // allowed
+```
+
+hello variable is being known and interpreted in the global scope environment.
+
+
+
+---
+
+
+
 # Collection
 
 
@@ -751,6 +794,30 @@ Output :
 1
 ```
 
+To get index on array of primitive types with better performance try **indexOf() method** :
+
+```typescript
+var arrayString: string[] = ["Banana", "Apple", "Strawberry", "Apple"];
+console.time("Find Index");
+const foundArrStr : number = arrayString.findIndex((element) => element === "Apple");
+console.log(foundArrStr); //1
+console.timeEnd("Find Index");
+
+console.time("Index Of");
+const resIndexOf : number = arrayString.indexOf("Apple");
+console.log(resIndexOf);
+console.timeEnd("Index Of");
+```
+
+Output :
+
+```
+1
+Find Index: 1.742ms
+1
+Index Of: 0.246ms
+```
+
 We know how to find first index from array of primitive, but how to find index any object on array of objects? below is an array of objects example :
 
 ```typescript
@@ -768,11 +835,11 @@ const arrCrypto: crypto[] = [
 ];
 ```
 
-Here is an example to find index object by their property :
+Here is an example to find first index object by their property :
 
 ```typescript
 const index: number = arrCrypto.findIndex((obj: crypto) => {
-  return obj.id == 3;
+  return obj.blockchain === "Polygon";
 });
 console.log(index);
 ```
@@ -780,7 +847,7 @@ console.log(index);
 Output :
 
 ```
-2
+0
 ```
 
 
@@ -805,7 +872,61 @@ Output :
 3
 ```
 
+To get index on array of primitive types with better performance try **lastIndexOf() method** :
 
+```typescript
+var arrayString: string[] = ["Banana", "Apple", "Strawberry", "Apple"];
+console.time("Find Last Index");
+const foundArrStr : number = arrayString.findLastIndex((element) => element === "Apple");
+console.log(foundArrStr); //1
+console.timeEnd("Find Last Index");
+
+console.time("Last Index Of");
+const resLastIndexOf : number = arrayString.lastIndexOf("Apple");
+console.log(resLastIndexOf);
+console.timeEnd("Last Index Of");
+```
+
+Output :
+
+```
+3
+Find Index: 2.017ms
+3
+Index Of: 0.256ms
+```
+
+We know how to find last index from array of primitive, but how to find index any object on array of objects? below is an array of objects example :
+
+```typescript
+interface crypto {
+  id: number;
+  blockchain: string;
+  price: number;
+}
+
+const arrCrypto: crypto[] = [
+  { id: 1, blockchain: "Polygon", price: 550 },
+  { id: 2, blockchain: "Polkadot", price: 770 },
+  { id: 3, blockchain: "Bitcoin", price: 1520 },
+  { id: 4, blockchain: "Polygon", price: 340 },
+];
+```
+
+Here is an example to find last index object by their property :
+
+```typescript
+const index: number = arrCrypto.findLastIndex((obj: crypto) => {
+  return obj.blockchain === "Polygon";
+});
+console.log(index);
+```
+
+Output :
+
+```
+3
+```
 
 
 
@@ -872,6 +993,26 @@ Output :
 │     1 │  4 │ "Polygon"  │   340 │
 └───────┴────┴────────────┴───────┘
 ```
+
+
+
+----
+
+
+
+#### For Each Method
+
+Here is an example code using **forEach() method**, we can execute arbitrary function once for each elements in the array :
+
+```typescript
+const arrayNum: number[] = [30, 44, 55, 22, 44, 11];
+arrayNum.forEach((element, index, arr) => console.log(element, index, arr));
+
+```
+
+**Note:** `forEach` expects a synchronous function.
+
+
 
 
 
