@@ -22,6 +22,10 @@
     - [ ] Typescript Way
       - [ ] Numeric Enums
       - [ ] String Enums
+- [ ] Interface
+  - [ ] Extending Interface
+  - [ ] Intersection Types
+
 - [ ] Modules
   - [ ] Import - Single Module
   - [ ] Import - Entire Module
@@ -511,6 +515,69 @@ console.log(BlockchainRPC.Latency); //Latency
 
 
 ---
+
+
+
+# Interface
+
+
+
+## Extending Interface 
+
+In javascript we can add new arbitrary property to an object with prototype, typescript provide elegant way to add new property to an object using extend keyword :
+
+```typescript
+interface coin extends creator {
+  name: string;
+  supply: number;
+}
+
+interface creator {
+  created: string;
+  author: "Satoshi Nakamoto";
+}
+
+const bitcoin: coin = {
+  name: "bitcoin",
+  supply: 21000000,
+  created: "2009",
+  author: "Satoshi Nakamoto",
+};
+
+console.log(bitcoin);
+```
+
+
+
+----
+
+
+
+## Intersection Types
+
+Interface support for creating new custom type via intersection types by combination between interface. To create intersection types we need & operator :
+
+```typescript
+interface Bitcoin {
+  lightningNetwork: string;
+}
+interface LiquidBitcoin {
+  confidential: string;
+}
+
+type superblockchain = Bitcoin & LiquidBitcoin;
+
+const powerfulBlockchain: superblockchain = {
+  lightningNetwork: "Yes",
+  confidential: "Support Confidential Transaction!",
+};
+
+console.log(powerfulBlockchain);
+```
+
+
+
+----
 
 
 
