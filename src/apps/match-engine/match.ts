@@ -1,15 +1,23 @@
 import { bidArray, askArray } from "./orderbook";
-import { peekBidPrice } from "./function";
+import { getSpread, getMidPoint } from "./function";
 
-console.table(bidArray);
-console.log(peekBidPrice(bidArray));
 //Sorting
 console.time("Bid Order Sorting");
 bidArray.sort((a, b) => {
   return b.price - a.price;
 });
 console.timeEnd("Bid Order Sorting");
-console.log(peekBidPrice(bidArray));
+console.table(bidArray);
+
+console.time("Ask Order Sorting");
+askArray.sort((a, b) => {
+  return a.price - b.price;
+});
+console.timeEnd("Ask Order Sorting");
+console.table(askArray);
+
+console.log(`Spread : ${getSpread(bidArray, askArray)}`);
+console.log(`Middle Point : ${getMidPoint(bidArray, askArray)}`);
 
 //console.table(bidArray);
 // const filtered = bidArray.filter((obj) => {
