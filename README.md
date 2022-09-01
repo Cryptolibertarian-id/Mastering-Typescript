@@ -23,6 +23,10 @@
       - [ ] Numeric Enums
       - [ ] String Enums
 - [ ] Modules
+  - [ ] Import - Single Module
+  - [ ] Import - Entire Module
+  - [ ] Import - Rename Module
+
 - [ ] Collection
   - [ ] What is Collections?
   - [ ] What is Indexed Collections?
@@ -30,6 +34,18 @@
     - [ ] Create Array
     - [ ] Iterate Array
     - [ ] Array Property & Methods
+      - [ ] Length Property
+      - [ ] Push Method
+      - [ ] Pop Method
+      - [ ] Shift Method
+      - [ ] Unshift Method
+      - [ ] Find Method
+      - [ ] Find Last Method
+      - [ ] Find Index Method
+      - [ ] Find Last Index Method
+      - [ ] Filter Method
+      - [ ] For Each Method
+
     - [ ] Multidimensional Array
     - [ ] Matrix
     - [ ] Array of Interface
