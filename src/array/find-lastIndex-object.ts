@@ -11,7 +11,7 @@ const arrCrypto: crypto[] = [
   { id: 4, blockchain: "Polygon", price: 340 },
 ];
 
-const index: number = arrCrypto.findIndex((obj: crypto) => {
-  return obj.id == 3;
+const index: number = arrCrypto.findLastIndex((obj: crypto) => {
+  return obj.blockchain === "Polygon";
 });
-console.log(index);
+console.log(index); //3

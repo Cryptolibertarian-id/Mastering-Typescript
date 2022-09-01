@@ -12,6 +12,6 @@ const arrCrypto: crypto[] = [
 ];
 
 const index: number = arrCrypto.findIndex((obj: crypto) => {
-  return obj.id == 3;
+  return obj.blockchain === "Polygon";
 });
-console.log(index);
+console.log(index); //0
