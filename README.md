@@ -217,6 +217,49 @@ ostack.items.push("Hello World!");
 console.log(ostack);
 ```
 
+Click F5, and pick TS Debug, new launch.json will be created :
+
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ts-node",
+      "type": "node",
+      "request": "launch",
+      "args": ["${relativeFile}"],
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}
+```
+
+Close the config, since we will not change anything.
+
+
+
+---
+
+
+
+## Debugging
+
+Now try debugging by click the line number you want to preview, in this case the author debug the last statements :
+
+<img src="assets/vscode/dot-debug.PNG" style="zoom:110%;" />
+
+Then here is the result of debugging :
+
+<img src="assets/vscode/debugging.PNG" style="zoom:110%;" />
+
+Happy Debugging!
+
 
 
 ---
