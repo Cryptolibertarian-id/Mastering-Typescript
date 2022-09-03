@@ -1,7 +1,10 @@
 class Stack {
-  public message: string = "Hello";
-  constructor() {}
+  items: string[];
+  constructor() {
+    this.items = [];
+  }
 }
 
 const ostack = new Stack();
+ostack.items.push("Hello World!");
 console.log(ostack);

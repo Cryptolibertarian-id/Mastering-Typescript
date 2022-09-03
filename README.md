@@ -9,6 +9,10 @@
     - [x] Static Typing
     - [x] Type Annotation
   - [ ] New Features?
+- [x] Debugging Typescript
+  - [x] Add Source Map
+  - [x] Config Debugger
+
 - [x] Variable Declaration
   - [x] Type Annotations
     - [x] Declare Explicit
@@ -67,7 +71,7 @@
 
 # Typescript
 
-Last Touched 18-07-2022.
+Last Touched 04-09-2022.
 
 | Parameter                              | Value                                                        | Note |
 | -------------------------------------- | ------------------------------------------------------------ | ---- |
@@ -141,6 +145,77 @@ Typescript provide type annotation so any code editor can perform static code an
 
 
 ## New Features?
+
+
+
+---
+
+
+
+# Debugging Typescript
+
+First, create new project for example basic-debug directory :
+
+```bash
+$ mkdir basic-debug 
+```
+
+Initiate node project :
+
+```bash
+$ npm init -y
+```
+
+Install typescript and ts-node/register packages to the development dependencies on our project :
+
+```bash
+$ npm install --save-dev ts-node typescript
+```
+
+
+
+---
+
+  
+
+## Add Sourcemap
+
+VS Code has built-in support for TypeScript debugging. To support  debugging TypeScript in combination with the executing JavaScript code,  VS Code relies on [source maps](https://developer.mozilla.org/docs/Tools/Debugger/How_to/Use_a_source_map) for the debugger to map between the original TypeScript source code and the running JavaScript. You can create source maps during the build by  setting `"sourceMap": true` in your `tsconfig.json`.
+
+Create typescript configurations with tsconfig.json name, and put this configs :
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "sourceMap": true
+  }
+}
+```
+
+
+
+## Config Debugger
+
+In this book the author recommend external debugger. Go to extensions on visual studio code and install TypeScript Debugger written by kakumei. 
+
+<img src="assets/vscode/ts-debugger.PNG" style="zoom:110%;" />
+
+After install above typescript debugger, try to Create stack.ts file for testing purpose :
+
+```typescript
+class Stack {
+  items: string[];
+  constructor() {
+    this.items = [];
+  }
+}
+
+const ostack = new Stack();
+ostack.items.push("Hello World!");
+console.log(ostack);
+```
 
 
 
@@ -304,28 +379,28 @@ console.log(Gun.sayHello()); // Hello World!
 With the type keyword we can create a new type or a type alias. Below we create a type alias:
 
 ```typescript
-  type Balance = number;
-  type Type = string;
+type Balance = number;
+type Type = string;
 ```
 
 Next we create a new type:
 
 ```typescript
-  type Wallet = {
+type Wallet = {
     name: string;
     amount: Balance;
     symbol: Type;
-  };
+};
 ```
 
 In the Type Wallet above we use two type aliases for the amount and symbol properties. Next we can create a variable with the Wallet data type:
 
 ```typescript
-  let bitcoinWallet: Wallet = {
+let bitcoinWallet: Wallet = {
     name: "Bitcoin",
     amount: 5.88800007,
     symbol: "BTC",
-  };
+};
 ```
 
 Furthermore, every time we create a variable of type Wallet make sure we fill in every available property otherwise the result will be an error. If you don't want an error to occur then we have to use optional properties using a question mark.
@@ -333,16 +408,16 @@ Furthermore, every time we create a variable of type Wallet make sure we fill in
 Look at the code below:
 
 ```typescript
-  type CryptoWallet = {
+type CryptoWallet = {
     name: string;
     amount: Balance;
     symbol?: Type;
-  };
+};
 
-  let ethereumWallet: CryptoWallet = {
+let ethereumWallet: CryptoWallet = {
     name: "Ethereum",
     amount: 23.88800007,
-  };
+};
 ```
 
 The symbol property uses a question mark, so if we don't fill in the symbol property when creating a variable the error will not occur.

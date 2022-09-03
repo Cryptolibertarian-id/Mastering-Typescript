@@ -10,7 +10,7 @@
       "request": "launch",
       "args": ["${relativeFile}"],
       "runtimeArgs": ["-r", "ts-node/register"],
-      "cwd": "${workspaceRoot}/data-structure",
+      "cwd": "${workspaceRoot}",
       "protocol": "inspector",
       "internalConsoleOptions": "openOnSessionStart"
     }
