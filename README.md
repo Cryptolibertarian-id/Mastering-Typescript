@@ -58,6 +58,45 @@
     - [ ] Matrix
     - [ ] Array of Interface
 
+- [ ] Data Structure
+  - [ ] Stack
+    - [ ] Create Stack Class
+  
+    - [ ] Create Stack Object
+  
+    - [ ] Call Push Method
+  
+    - [ ] Call Peek Method
+  
+    - [ ] Call Size Method
+  
+    - [ ] Call Pop Method
+  
+    - [ ] Call is Empty Method
+  
+    - [ ] Call Clear Stack Method
+  
+  - [ ] Queue
+    - [ ] Create Queue Class
+  
+    - [ ] Create Queue Object
+  
+    - [ ] Call Enqueue Method
+  
+    - [ ] Call Peek Method
+  
+    - [ ] Call Size Method
+  
+    - [ ] Call Dequeue Method
+  
+    - [ ] Call is Empty Method
+  
+    - [ ] Call Clear Queue Method
+  
+  - [ ] Linked List
+  
+  - [ ] Tree
+  
 - [ ] Time Programming
   - [ ] Timestamp
 
@@ -1352,6 +1391,243 @@ arrayNum.forEach((element, index, arr) => console.log(element, index, arr));
 ---
 
 
+
+# Data Structure
+
+
+
+## Stack 
+
+
+
+### Create Stack Class 
+
+Here is an example Stack to store primitive types, in this case we will create stack to store string type :
+
+```typescript
+class Stack {
+  #items: string[];
+  constructor() {
+    this.#items = [];
+  }
+  push(element: string) {
+    this.#items.push(element);
+  }
+  pop() {
+    this.#items.pop();
+  }
+  peek() {
+    return this.#items[this.#items.length - 1];
+  }
+  isEmpty() {
+    return this.size() === 0;
+  }
+  size() {
+    return this.#items.length;
+  }
+  clear() {
+    this.#items = [];
+  }
+}
+```
+
+
+
+### Create Stack Object 
+
+```
+
+```
+
+
+
+### Call Push Method 
+
+```
+
+```
+
+
+
+### Call Peek Method 
+
+```
+
+```
+
+
+
+### Call Size Method
+
+```
+
+```
+
+
+
+### Call Pop Method
+
+```
+
+```
+
+
+
+### Call Clear Method 
+
+```
+
+```
+
+
+
+### Call isEmpty Method
+
+```
+
+```
+
+
+
+
+
+---
+
+
+
+## Queue
+
+
+
+### Create Queue Class
+
+Here is an example Queue to store primitive types, in this case we will create queue to store number type :
+
+```typescript
+class Queue {
+  #count = 0;
+  #lowestCount = 0;
+  #items: number[] = [];
+  enqueue(element: number) {
+    this.#items[this.#count] = element;
+    this.#count++;
+  }
+  isEmpty() {
+    return this.#count - this.#lowestCount === 0;
+  }
+  dequeue() {
+    if (this.isEmpty()) {
+      throw new Error("No Element!");
+    }
+    const result = this.#items[this.#lowestCount];
+    delete this.#items[this.#lowestCount];
+    this.#lowestCount++;
+    return result;
+  }
+  peek() {
+    if (this.isEmpty()) {
+      return "No Element!";
+    }
+    return this.#items[this.#lowestCount];
+  }
+  size() {
+    return this.#count - this.#lowestCount;
+  }
+  clear() {
+    this.#items = [];
+    this.#count = 0;
+    this.#lowestCount = 0;
+  }
+}
+```
+
+ 
+
+### Create Queue Object
+
+Here is an example how to create Queue object :
+
+```typescript
+const oque = new Queue();
+```
+
+
+
+### Call Enqueue Method
+
+Since we create Queue to store number type, we can add some number to the data structure :
+
+```typescript
+oque.enqueue(10);
+oque.enqueue(20);
+oque.enqueue(30);
+oque.enqueue(40);
+oque.enqueue(50);
+```
+
+
+
+### Call Peek Method
+
+To see value in the first element you can call peek method :
+
+```typescript
+console.log(oque.peek());
+```
+
+Output :
+
+```
+10
+```
+
+
+
+### Call Size Method
+
+To see how many elements inside queue you can call size method :
+
+```typescript
+console.log(oque.size());
+```
+
+
+
+### Call Dequeue Method
+
+We can remove the first element within Queue data structure, by executing this method :
+
+```typescript
+console.log(oque.dequeue());
+console.log(oque.dequeue());
+```
+
+Output :
+
+```typescript
+10
+20
+```
+
+
+
+### Call Clear Method 
+
+```
+
+```
+
+
+
+### Call isEmpty Method
+
+```
+
+```
+
+
+
+-----
 
 
 

@@ -40,9 +40,10 @@ oque.enqueue(20);
 oque.enqueue(30);
 oque.enqueue(40);
 oque.enqueue(50);
-console.log(oque.dequeue());
-console.log(oque.dequeue());
+console.log(oque.peek());
 console.log(oque.size());
+console.log(oque.dequeue());
+console.log(oque.dequeue());
 
 // try {
 //   oque.dequeue();
