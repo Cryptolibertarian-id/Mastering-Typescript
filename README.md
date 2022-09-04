@@ -56,6 +56,8 @@
   
     - [ ] Complex Object Types
   
+  - [ ] Object Comparison
+  
   - [ ] JSON
     - [ ] JSON & Object Literal
     - [ ] Stringify
@@ -70,6 +72,7 @@
   - [ ] Import - Single Module
   - [ ] Import - Entire Module
   - [ ] Import - Rename Module
+  - [ ] Compiling Modules
 
 - [ ] Collection
   - [ ] What is Collections?
@@ -134,7 +137,10 @@
   - [ ] Tree
 
 - [ ] Time Programming
+  - [ ] ISO 8601
+  - [ ] Browser Inconsistent
   - [ ] Timestamp
+
 
 
 
@@ -1053,7 +1059,9 @@ console.log(man);
 
 ### Read Only Properties
 
+In typescript we can create readonly properties, but does not mean read only property is absolutely immutable. The goal of read only property is to prevent the value cant be rewritten at the development time especially when type checking. On the runtime, readonly property does not change the behaviour of the program.
 
+Below is an example of readonly properties manipulation via object reference :
 
 ```typescript
 interface Person {
@@ -1068,17 +1076,17 @@ interface ReadonlyPerson {
 }
 
 let writablePerson: Person = {
-  name: "Kodok Zuma Gempal",
-  age: 19,
+  name: "Gun Gun Febrianza",
+  age: 30,
   sex: "male",
 };
 
 // works
 let readonlyPerson: ReadonlyPerson = writablePerson;
 
-console.log(readonlyPerson.age); // prints '42'
+console.log(readonlyPerson.age); // prints '30'
 writablePerson.age++;
-console.log(readonlyPerson.age); // prints '43'
+console.log(readonlyPerson.age); // prints '31'
 ```
 
 
@@ -1089,6 +1097,8 @@ console.log(readonlyPerson.age); // prints '43'
 
 ### Extending Types
 
+You can read about interface here.
+
 
 
 ---
@@ -1096,6 +1106,33 @@ console.log(readonlyPerson.age); // prints '43'
 
 
 ### Generic Object Types
+
+Here is an example of Generic Object Types :
+
+```typescript
+interface CryptoCoin<Type> {
+  CoinType: Type;
+  EVMBased?: Type;
+  shitcoin?: Type;
+}
+
+let whatCoin: CryptoCoin<string> = {
+  CoinType: "ERC-20 Token",
+};
+
+console.log(whatCoin.CoinType); // //ERC-20 Token
+
+type boolOrNumber = boolean | number;
+
+let anyCoin: CryptoCoin<boolOrNumber | string> = {
+  CoinType: 1,
+  EVMBased: true,
+  shitcoin: "No",
+};
+
+console.log(anyCoin);
+// { CoinType: 1, EVMBased: true, shitcoin: 'No' }
+```
 
 
 
@@ -1105,7 +1142,128 @@ console.log(readonlyPerson.age); // prints '43'
 
 ### Complex Object Types
 
+Here is an example of Complex Object Types :
 
+```typescript
+type TypeAlias = number[];
+
+let objComplex: {
+  a: string[];
+  b: (param: string[]) => string[];
+  c: { d: boolean; e: TypeAlias };
+} = {
+  a: ["Hi", "Maudy"],
+  b: function (param: string[]): string[] {
+    return this.a;
+  },
+  c: { d: true, e: [22, 33] },
+};
+
+console.log(objComplex);
+```
+
+The output from above code is :
+
+```
+{
+  a: [ 'Hi', 'Maudy' ],
+  b: [Function: b],
+  c: { d: true, e: [ 22, 33 ] }
+}
+```
+
+We can simplified above code :
+
+```typescript
+type TypeAlias = number[];
+type ComplexObj = {
+    a: string[];
+    b: (param: string[]) => string[];
+    c: { d: boolean; e: TypeAlias };
+};
+
+let objComplex: ComplexObj = {
+    a: ["Hi", "Maudy"],
+    b: function (param: string[]): string[] {
+        return this.a;
+    },
+    c: { d: true, e: [22, 33] },
+};
+
+console.log(objComplex);
+```
+
+
+
+---
+
+
+
+## Object Comparison
+
+Here is an example code to compare two object that has been created via interface and type alias :
+
+```typescript
+const blockchain: {
+  name: string;
+  creator: string;
+  totalCoin: number;
+} = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+type TBlockchain = {
+  name: string;
+  creator: string;
+  totalCoin: number;
+};
+
+const Type_bitcoin: TBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+interface IBlockchain {
+  name: string;
+  creator: string;
+  totalCoin: number;
+}
+
+const Interface_bitcoin: IBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+console.log(typeof blockchain); //object
+console.log(blockchain);
+
+console.log(typeof Interface_bitcoin);  //object
+console.log(Interface_bitcoin);
+
+console.log(typeof Type_bitcoin); //object
+console.log(Type_bitcoin);
+
+console.log(Interface_bitcoin == Type_bitcoin); //false
+console.log(Interface_bitcoin === Type_bitcoin); //false
+```
+
+If we compare two object that has been created via **type template** and **interface** here is the result :
+
+```typescript
+console.log(blockchain == Interface_bitcoin); //false
+console.log(blockchain === Interface_bitcoin); //false
+```
+
+If we compare two object that has been created via **type alias** and **type interface** here is the result :
+
+```typescript
+console.log(Type_bitcoin == blockchain); //false
+console.log(Type_bitcoin === blockchain); //false
+```
 
 
 
@@ -1415,6 +1573,37 @@ employeeObject.printEmployee();
 
 
 ---
+
+
+
+## Compiling Modules
+
+To compile **modules** we need to determine the **target environment**, there is several target below :
+
+1. None
+2. CommonJS
+3. Node16
+4. AMD
+5. UMD
+6. System
+7. ES6, ES2015, ESNext
+8. NodeNext
+
+Add this **flags** when we compile the **modules** :
+
+```
+--module <target environment> <file path>
+```
+
+For **Target Environment** :
+
+- If our target is the **server-side applications** for **node.js** use **CommonJS Module Loader**.
+- If our target is the **client-side applications** for **web browser apps** use **AMD Target** which is loaded via **require.js**.
+- If our target is the **server-side** and **client-side modules** use **UMD Target**.
+
+
+
+----
 
 
 
@@ -2252,6 +2441,77 @@ Output :
 
 
 # Time Programming
+
+
+
+## ISO 8601
+
+**ISO 8601** is an international standard to describe data communication related to date & time. 
+
+Below is the format to express date & time using **ISO 8601** :
+
+| Parameter          | Value                     |
+| ------------------ | ------------------------- |
+| Date               | 2022-06-23                |
+| Date & Time in UTC | 2022-06-23T03:02:50+00:00 |
+|                    | 2022-06-23T03:02:50Z      |
+|                    | 20220623T030250Z          |
+| Week               | 2022-W25                  |
+| Week with Weekday  | 2022-W25-4                |
+| Ordinal Date       | 2022-174                  |
+
+From above data if we use moment.js we can parsing ISO 8601 format via string input :
+
+```
+2013-02-08  # A calendar date part
+2013-02     # A month date part
+2013-W06-5  # A week date part
+2013-039    # An ordinal date part
+
+20130208    # Basic (short) full date
+201303      # Basic (short) year+month
+2013        # Basic (short) year only
+2013W065    # Basic (short) week, weekday
+2013W06     # Basic (short) week only
+2013050     # Basic (short) ordinal date (year + day-of-year)
+```
+
+Data waktu (**time part**) juga bisa diberikan, terpisah dari tanggal (**date**) menggunakan spasi atau simbol huruf T  :
+
+We can provide time part data, separated from the date using space or letter symbol T :  
+
+```
+2013-02-08T09            # An hour time part separated by a T
+2013-02-08 09            # An hour time part separated by a space
+2013-02-08 09:30         # An hour and minute time part
+2013-02-08 09:30:26      # An hour, minute, and second time part
+2013-02-08 09:30:26.123  # An hour, minute, second, and millisecond time part
+2013-02-08 24:00:00.000  # hour 24, minute, second, millisecond equal 0 means next day at midnight
+
+20130208T080910,123      # Short date and time up to ms, separated by comma
+20130208T080910.123      # Short date and time up to ms
+20130208T080910          # Short date and time up to seconds
+20130208T0809            # Short date and time up to minutes
+20130208T08              # Short date and time, hours only
+```
+
+
+
+---
+
+
+
+
+
+## Browser Inconsistent
+
+Here is the data related to **Javascript Date Parsing** on **cross-browser**, you can see the browser inconsistent here :
+
+https://dygraphs.com/date-formats.html
+
+
+
+---
 
 
 
