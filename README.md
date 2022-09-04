@@ -1436,7 +1436,7 @@ class Stack {
 ### Create Stack Object 
 
 ```
-
+const ostack = new Stack();
 ```
 
 
@@ -1444,7 +1444,7 @@ class Stack {
 ### Call Push Method 
 
 ```
-
+ostack.push("Hello World!");
 ```
 
 
@@ -1484,7 +1484,7 @@ class Stack {
 ### Call isEmpty Method
 
 ```
-
+console.log(ostack.isEmpty());
 ```
 
 
