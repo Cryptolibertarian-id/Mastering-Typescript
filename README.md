@@ -27,6 +27,28 @@
     - [ ] Typescript Way
       - [ ] Numeric Enums
       - [ ] String Enums
+- [ ] Object
+  - [ ] Fundamental Object
+  
+  - [ ] Custom Object Types
+    - [ ] Type Template
+  
+    - [ ] Type Alias
+  
+    - [ ] Interface
+  
+    - [ ] Mutable Properties
+  
+    - [ ] Object Destructuree
+  
+    - [ ] Dynamic Properties
+  
+  - [ ] JSON
+    - [ ] JSON & Object Literal
+    - [ ] Stringify
+    - [ ] Parse JSON
+    - [ ] Parse Date in JSON
+  
 - [ ] Interface
   - [ ] Extending Interface
   - [ ] Intersection Types
@@ -62,42 +84,42 @@
 - [ ] Data Structure
   - [ ] Stack
     - [ ] Create Stack Class
-  
+
     - [ ] Create Stack Object
-  
+
     - [ ] Call Push Method
-  
+
     - [ ] Call Peek Method
-  
+
     - [ ] Call Size Method
-  
+
     - [ ] Call Pop Method
-  
+
     - [ ] Call is Empty Method
-  
+
     - [ ] Call Clear Stack Method
-  
+
   - [ ] Queue
     - [ ] Create Queue Class
-  
+
     - [ ] Create Queue Object
-  
+
     - [ ] Call Enqueue Method
-  
+
     - [ ] Call Peek Method
-  
+
     - [ ] Call Size Method
-  
+
     - [ ] Call Dequeue Method
-  
+
     - [ ] Call is Empty Method
-  
+
     - [ ] Call Clear Queue Method
-  
+
   - [ ] Linked List
-  
+
   - [ ] Tree
-  
+
 - [ ] Time Programming
   - [ ] Timestamp
 
@@ -771,6 +793,30 @@ Sebelumnya kita telah mempelajari cara membuat **function object** menggunakan *
 
 
 ## Custom Object Types
+
+
+
+### Type Template 
+
+
+
+### Type Alias 
+
+
+
+### Interface 
+
+
+
+### Mutable Properties 
+
+
+
+### Object Destructure 
+
+
+
+### Dynamic Properties
 
 
 
