@@ -4,7 +4,7 @@ interface crypto {
   price: number;
 }
 
-const arrCrypto: crypto[] = [
+var arrCrypto: crypto[] = [
   { id: 1, blockchain: "Polygon", price: 550 },
   { id: 2, blockchain: "Polkadot", price: 770 },
   { id: 3, blockchain: "Bitcoin", price: 1520 },
