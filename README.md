@@ -318,11 +318,11 @@ Typescript supports Static Typing which prevents us from creating a generic vari
 
 When we declare a variable in typescript, we must add a colon and type annotation. Below are the type annotations available in typescript:
 
-<img src="assets/Type-Annotation.png" style="zoom:120%;" />
+<img src="assets/data-types/Type-Annotation.png" style="zoom:120%;" />
 
 To declare the data type of a variable we can do it explicitly or implicitly :
 
-<img src="assets/Declare-Type.png" style="zoom:120%;" />
+<img src="assets/data-types/Declare-Type.png" style="zoom:120%;" />
 
 
 
@@ -335,9 +335,9 @@ To declare the data type of a variable we can do it explicitly or implicitly :
 Below is an example of using type annotations on primitive data types. The declaration is done explicitly by asserting the given data type :
 
 ```typescript
-  const username: string = "Maudy Ayunda";
-  const height: number = 167.13;
-  const isCute: boolean = true;
+const username: string = "Maudy Ayunda";
+const height: number = 167.13;
+const isCute: boolean = true;
 ```
 
 
@@ -351,9 +351,9 @@ Below is an example of using type annotations on primitive data types. The decla
 Below is an implicit data type declaration, the typescript compiler will auto-type the data based on the given literal :
 
 ```typescript
-  const username = "Maudy Ayunda";
-  const height = 167.13;
-  const isCute = true;
+const username = "Maudy Ayunda";
+const height = 167.13;
+const isCute = true;
 ```
 
 
@@ -370,7 +370,7 @@ Below is an implicit data type declaration, the typescript compiler will auto-ty
 
 As discussed earlier, JavaScript has 8 Data Types and 7 of them are called primitives or primitive values.
 
-<img src="assets/Primitive-Types.png" style="zoom:120%;" />
+<img src="assets/data-types/Primitive-Types.png" style="zoom:120%;" />
 
 The term primitive is used because it only stores a single value, data is not an object and has no methods. Previously in javascript we could create a primitive type without using a type annotation:
 
@@ -419,7 +419,21 @@ Variable animal1 on above code store string literal and variable animal2 is trie
 
 <img src="assets/data-types/Variable-object.png" style="zoom:120%;" />
 
+Although animal1 and animal2 has the same value, each of one store value independently. If we change the value from variable animal1 then the value on variable2 will not changed. Here is an example :
 
+```typescript
+var animal1: string = "dinosaurus";
+var animal2: string = animal1;
+
+console.log(animal1); //dinosaurus
+console.log(animal2); //dinosaurus
+
+animal1 = "Godzilla";
+console.log(animal1); //Godzilla
+console.log(animal2); //dinosaurus
+```
+
+In javascript, primitive types has a characteristic of immutable.
 
 
 
@@ -428,6 +442,14 @@ Variable animal1 on above code store string literal and variable animal2 is trie
 
 
 ### Immutable
+
+Using the last example we know that **animal1** has a **"Godzilla"** literal value and we can change the strings into upper case by calling **toUpperCase() method** to become **"GODZILLA"**. Most peoples think the value of **animal1** is changed, but the result is not changed because it's immutable
+
+```typescript
+animal1 = "Godzilla";
+console.log(animal1.toUpperCase()); //GODZILLA
+console.log(animal1); //Godzilla
+```
 
 
 
@@ -443,7 +465,7 @@ Objects can store all values that belong to primitive types. This flexible natur
 
 When we interact with web browsers using JavaScript we will be acquainted with the built-in objects, a set of objects built into the web browser that we can use to make it easier to solve problems in programming languages. Below is an example of a built-in object in javascript:
 
-<img src="assets/Reference-Types.png" style="zoom:120%;" />
+<img src="assets/data-types/Reference-Types.png" style="zoom:120%;" />
 
 The built-in object is also available in Node.js/Deno Runtime Engine, below is an example of a simple object that has properties and methods in the javascript :
 
@@ -741,6 +763,14 @@ Basically everything on javascript is an object, there is fundamental objects wh
 12. URIError
 
 Sebelumnya kita telah mempelajari cara membuat **function object** menggunakan **function constructor**. **Function** adalah salah satu dari bagian **fundamental object** yang dimiliki oleh **javascript**.
+
+
+
+---
+
+
+
+## Custom Object Types
 
 
 
