@@ -39,9 +39,22 @@
   
     - [ ] Mutable Properties
   
-    - [ ] Object Destructuree
+    - [ ] Object Destructure
   
     - [ ] Dynamic Properties
+      - [ ] Index Type Signature
+  
+      - [ ] Record Type
+  
+    - [ ] Optional Properties
+  
+    - [ ] Read Only Properties
+  
+    - [ ] Extending Types
+  
+    - [ ] Generic Object Types
+  
+    - [ ] Complex Object Types
   
   - [ ] JSON
     - [ ] JSON & Object Literal
@@ -784,8 +797,6 @@ Basically everything on javascript is an object, there is fundamental objects wh
 11. TypeError
 12. URIError
 
-Sebelumnya kita telah mempelajari cara membuat **function object** menggunakan **function constructor**. **Function** adalah salah satu dari bagian **fundamental object** yang dimiliki oleh **javascript**.
-
 
 
 ---
@@ -794,29 +805,307 @@ Sebelumnya kita telah mempelajari cara membuat **function object** menggunakan *
 
 ## Custom Object Types
 
+The author is emphasizing again that basically everything in javascript is an object and we can create our own custom object. Here is the diagram that we can create properties with primitype types or built-in objects that provided by the javascript engine.
+
+<img src="assets/object/Custom-Object.png" style="zoom:110%;" />
+
+In previous chapter when you learn about reference types you are basically create your own custom object types.
+
+
+
+---
+
 
 
 ### Type Template 
+
+Here is an example to create an object using type template on typescript :
+
+```typescript
+const blockchain: {
+  name: string;
+  creator: string;
+  totalCoin: number;
+} = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+```
+
+On above code we will define the data types that required for the properties for the blockchain object.
+
+
+
+---
 
 
 
 ### Type Alias 
 
+Here is an example to create an object using type alias :
+
+```typescript
+type TBlockchain = {
+  name: string;
+  creator: string;
+  totalCoin: number;
+};
+
+const Type_bitcoin: TBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+```
+
+
+
+----
+
 
 
 ### Interface 
+
+Here is an example to create an object using interface :
+
+```typescript
+interface IBlockchain {
+  name: string;
+  creator: string;
+  totalCoin: number;
+}
+
+const Interface_bitcoin: IBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+```
+
+
+
+---
 
 
 
 ### Mutable Properties 
 
+**Javascript object** has a **mutable** characteristic, meaning we can change the **properties value**.
+
+```typescript
+interface IBlockchain {
+  name: string;
+  creator: string;
+  totalCoin: number;
+}
+
+const InterfaceBitcoin: IBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+console.log(InterfaceBitcoin.creator); //Satoshi Nakamoto
+InterfaceBitcoin.creator = "Anonymous";
+console.log(InterfaceBitcoin.creator); //Anonymous
+```
+
+
+
+---
+
 
 
 ### Object Destructure 
 
+For object literal we can operate destructure, here is an example to get value from specific properties :
+
+```typescript
+interface IBlockchain {
+  blockchain: string;
+  creator: string;
+  totalCoin: number;
+}
+
+const Interface_bitcoin: IBlockchain = {
+  blockchain: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+const { blockchain, creator } = Interface_bitcoin;
+console.log(`${blockchain} is invented by ${creator}`);
+```
+
+
+
+---
+
 
 
 ### Dynamic Properties
+
+There is a time when we dont know what property from our object will be needed in the future, to support this problem we need dynamic properties.
+
+
+
+---
+
+
+
+#### Index Type Signature 
+
+We can create dynamic properties for an object via Index Type Signature, here is an example :
+
+```typescript
+interface NFT {
+  [key: string]: any;
+}
+
+const boredAPE: NFT = {};
+boredAPE.creator = "Yuga Labs";
+boredAPE.builtOn = "Ethereum";
+boredAPE.amount = 10000;
+
+console.log(boredAPE); // { creator: 'Yuga Labs', builtOn: 'Ethereum', amount: 10000 }
+```
+
+We can combine Index Type Signature with Interface Property to add new specific properties that enforce to be use when object is created.
+
+```typescript
+interface blockchain {
+  [key: string]: any;
+  name: string;
+}
+
+const Opolygon: blockchain = {
+  type: {
+    testNet: "Mumbai",
+    layer: "Layer2",
+  },
+  name: "Polygon PoS",
+};
+
+console.log(Opolygon); // { type: { testNet: 'Mumbai', layer: 'Layer2' }, name: 'Polygon PoS' }
+```
+
+From above example we cant create object Opolygon without name property.
+
+
+
+---
+
+
+
+#### Record Type
+
+We can also use Record Type to create an object with dynamic properties :
+
+```typescript
+const agent: Record<string, any> = {};
+agent.name = "Gun";
+agent.age = 30;
+agent.skill = ["DevOps", "Blockchain"];
+
+console.log(agent); //{ name: 'Gun', age: 30, skill: [ 'DevOps', 'Blockchain' ] }
+```
+
+
+
+---
+
+
+
+### Optional Properties
+
+In typescript we can create optional properties for an object, so we have an option to determine which property that will be used for an object.
+
+```typescript
+interface person {
+  fullname: "Gun Gun Febrianza";
+  twitter: string;
+  listCoin: string[];
+  bitcoiners?: boolean;
+}
+
+const man: person = {
+  fullname: "Gun Gun Febrianza",
+  twitter: "@daddybitcoin",
+  listCoin: ["Bitcoin", "Liquid Bitcoin"],
+};
+
+const libertarian: person = {
+  fullname: "Gun Gun Febrianza",
+  twitter: "@daddybitcoin",
+  listCoin: ["Bitcoin", "Liquid Bitcoin"],
+  bitcoiners: true,
+};
+
+console.log(man);
+```
+
+
+
+---
+
+
+
+### Read Only Properties
+
+
+
+```typescript
+interface Person {
+  name: string;
+  age: number;
+  sex: string;
+}
+
+interface ReadonlyPerson {
+  readonly name: string;
+  readonly age: number;
+}
+
+let writablePerson: Person = {
+  name: "Kodok Zuma Gempal",
+  age: 19,
+  sex: "male",
+};
+
+// works
+let readonlyPerson: ReadonlyPerson = writablePerson;
+
+console.log(readonlyPerson.age); // prints '42'
+writablePerson.age++;
+console.log(readonlyPerson.age); // prints '43'
+```
+
+
+
+---
+
+
+
+### Extending Types
+
+
+
+---
+
+
+
+### Generic Object Types
+
+
+
+---
+
+
+
+### Complex Object Types
+
+
 
 
 
