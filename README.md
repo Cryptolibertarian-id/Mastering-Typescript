@@ -512,6 +512,12 @@ In programming language we can use enums to define an object that has finite pro
 
 We can learn from javascript version then to typescript version.
 
+
+
+---
+
+
+
 ### Javascript Way
 
 In javascript we can create enums as object keys, for example :
@@ -577,7 +583,7 @@ SymBlockchain.Bitcoin = Symbol("Shitcoin");
 console.log(SymBlockchain.Bitcoin); //Symbol(Shitcoin)
 ```
 
-To transform above code into immutable object we can use Object.freeze(), here is the example :
+To transform above code into immutable object we can use **Object.freeze() method**, here is the example :
 
 ```javascript
 const EnumBlockchain = Object.freeze({
@@ -608,6 +614,8 @@ Its become immutable, you cant change the value.
 
 
 ### Typescript Way
+
+
 
 #### Numeric Enums
 
@@ -676,6 +684,12 @@ console.log(BlockchainRPC.Latency); //Latency
 
 
 # Object
+
+Previously when you learn about Data Types, you has been learn what is object but the term about object is really ambigous on javascript. Object that we learn before is Fundamental Object, one of the built-in Object inside javascript engine. 
+
+<img src="assets/object/Built-in-Object.png" style="zoom:110%;" />
+
+
 
 
 
