@@ -202,7 +202,7 @@ Static Type System help us to understand the shape and behaviors on our code.
 
 As a superset, typescript provides the new advantage of supporting static typing characteristics. So, what are the advantages of static typing?
 
-<img src="assets/Static-Typing.png" style="zoom:120%;" />
+<img src="assets/Static-Typing.png" style="zoom:110%;" />
 
 Every time we create a new variable we must first define the data type. Once this type has been specified, we cannot change it. This protects developers from a bunch of common bugs and security flaws in the code we write. Software development becomes more secure.
 
@@ -225,7 +225,138 @@ Typescript provide type annotation so any code editor can perform static code an
 
 
 
-## New Features?
+## Install
+
+To start typescript project, create new directory and execute this command :
+
+```bash
+$ tsc --init
+```
+
+Here is a minimum configurations from author :
+
+```json
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./dist",
+    "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
+```
+
+Then execute this command to create node project :
+
+```bash
+$ npm init -y
+```
+
+Then on file package.json, change the build command :
+
+```json
+  "scripts": {
+    "build": "npx tsc"
+  },
+```
+
+Execute this command to build the project :
+
+```bash
+$ npx tsc
+```
+
+
+
+---
+
+
+
+## Node Typing
+
+Try to create test.ts and then write this code :
+
+```javascript
+console.log("Hello World!"); //Prints Hello World!
+```
+
+If we create project for node applications then you will get error prompt :
+
+```
+any
+Cannot find name 'console'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.ts(2584)
+```
+
+To solve this issue we need to install @types/node :
+
+```bash
+$ npm install @types/node --save-dev
+```
+
+On Visual Studio Code, if we move our cursor into console keyword then the tooltips will inform about the namespace console :
+
+```javascript
+namespace console
+var console: Console
+The console module provides a simple debugging console that is similar to the JavaScript console mechanism provided by web browsers.
+
+The module exports two specific components:
+
+A Console class with methods such as console.log(), console.error() andconsole.warn() that can be used to write to any Node.js stream.
+A global console instance configured to write to process.stdout and process.stderr. The global console can be used without callingrequire('console').
+
+Warning: The global console object's methods are neither consistently synchronous like the browser APIs they resemble, nor are they consistently asynchronous like all other Node.js streams. See the note on process I/O for more information.
+
+Example using the global console:
+
+console.log('hello world');
+// Prints: hello world, to stdout
+console.log('hello %s', 'world');
+// Prints: hello world, to stdout
+console.error(new Error('Whoops, something bad happened'));
+// Prints error message and stack trace to stderr:
+//   Error: Whoops, something bad happened
+//     at [eval]:5:15
+//     at Script.runInThisContext (node:vm:132:18)
+//     at Object.runInThisContext (node:vm:309:38)
+//     at node:internal/process/execution:77:19
+//     at [eval]-wrapper:6:22
+//     at evalScript (node:internal/process/execution:76:60)
+//     at node:internal/main/eval_string:23:3
+
+const name = 'Will Robinson';
+console.warn(`Danger ${name}! Danger!`);
+// Prints: Danger Will Robinson! Danger!, to stderr
+Example using the Console class:
+
+const out = getStreamSomehow();
+const err = getStreamSomehow();
+const myConsole = new console.Console(out, err);
+
+myConsole.log('hello world');
+// Prints: hello world, to out
+myConsole.log('hello %s', 'world');
+// Prints: hello world, to out
+myConsole.error(new Error('Whoops, something bad happened'));
+// Prints: [Error: Whoops, something bad happened], to err
+
+const name = 'Will Robinson';
+myConsole.warn(`Danger ${name}! Danger!`);
+// Prints: Danger Will Robinson! Danger!, to err
+@see — source
+```
+
+If the project that we want to create is web applications inside the browser then add this configuration on tsconfig :
+
+```json
+        "lib": [
+            "es6",
+            "dom"    <------- Add this "dom" here
+        ],
+```
 
 
 
@@ -359,11 +490,11 @@ Typescript supports Static Typing which prevents us from creating a generic vari
 
 When we declare a variable in typescript, we must add a colon and type annotation. Below are the type annotations available in typescript:
 
-<img src="assets/data-types/Type-Annotation.png" style="zoom:120%;" />
+<img src="assets/data-types/Type-Annotation.png" style="zoom:110%;" />
 
 To declare the data type of a variable we can do it explicitly or implicitly :
 
-<img src="assets/data-types/Declare-Type.png" style="zoom:120%;" />
+<img src="assets/data-types/Declare-Type.png" style="zoom:110%;" />
 
 
 
@@ -411,7 +542,7 @@ const isCute = true;
 
 As discussed earlier, JavaScript has 8 Data Types and 7 of them are called primitives or primitive values.
 
-<img src="assets/data-types/Primitive-Types.png" style="zoom:120%;" />
+<img src="assets/data-types/Primitive-Types.png" style="zoom:110%;" />
 
 The term primitive is used because it only stores a single value, data is not an object and has no methods. Previously in javascript we could create a primitive type without using a type annotation:
 
@@ -458,7 +589,7 @@ var animal2: string = animal1;
 
 Variable animal1 on above code store string literal and variable animal2 is tried to binding the value to the value on animal1.
 
-<img src="assets/data-types/Variable-object.png" style="zoom:120%;" />
+<img src="assets/data-types/Variable-object.png" style="zoom:110%;" />
 
 Although animal1 and animal2 has the same value, each of one store value independently. If we change the value from variable animal1 then the value on variable2 will not changed. Here is an example :
 
@@ -506,7 +637,7 @@ Objects can store all values that belong to primitive types. This flexible natur
 
 When we interact with web browsers using JavaScript we will be acquainted with the built-in objects, a set of objects built into the web browser that we can use to make it easier to solve problems in programming languages. Below is an example of a built-in object in javascript:
 
-<img src="assets/data-types/Reference-Types.png" style="zoom:120%;" />
+<img src="assets/data-types/Reference-Types.png" style="zoom:110%;" />
 
 The built-in object is also available in Node.js/Deno Runtime Engine, below is an example of a simple object that has properties and methods in the javascript :
 
