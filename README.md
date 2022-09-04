@@ -675,6 +675,66 @@ console.log(BlockchainRPC.Latency); //Latency
 
 
 
+# Object
+
+
+
+---
+
+
+
+## JSON
+
+JSON is the abbreviation of Javascript Object Notation, JSON used for data exchange between browser and server or vice versa. We can change native javascript object (object literal) into JSON and we can change JSON into native javascript object. 
+
+
+
+---
+
+
+
+### JSON & Object Literal
+
+Here is an example of Object Literal :
+
+```javascript
+{ 
+    name: "Gun Gun Febrianza", 
+    bitcoiners: "Maximalist"
+}
+```
+
+If we change object literal above into JSON here is the example :
+
+```json
+{ 
+    "name": "Gun Gun Febrianza", 
+    "bitcoiners": "Maximalist"
+}
+```
+
+There is significant change between *Object Literal* and *JSON*, on JSON there is more rules applied :
+
+1. To use **function** as *value* for *properties* is not allowed in JSON.
+
+2. To use **date object** as *value* for *properties* is not allowed in JSON.
+
+3. To use **undefined** as *value* for *properties* is not allowed in JSON.
+
+
+
+---
+
+
+
+
+
+---
+
+
+
+
+
 # Interface
 
 
@@ -1014,9 +1074,11 @@ Output :
 
 Here is basic array methods if we want to add and remove element to an array using FIFO style :
 
-
+<img src="assets/array/Array-Method-Shift-Unshift.png" style="zoom:110%;" />
 
 We can execute this operations also on array of objects :
+
+<img src="assets/array/Array-Method-Shift-Unshift-Object.png" style="zoom:110%;" />
 
 
 
@@ -1028,11 +1090,23 @@ We can execute this operations also on array of objects :
 
 
 
+```typescript
+
+```
+
+
+
 ---
 
 
 
 #### Unshift Method
+
+
+
+```typescript
+
+```
 
 
 
