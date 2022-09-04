@@ -17,8 +17,9 @@
   - [x] Type Annotations
     - [x] Declare Explicit
     - [x] Declare Implicit
-- [ ] Data Types
-  - [ ] Primitive Types
+- [x] Data Types
+  - [x] Primitive Types
+    - [x] Immutable
   - [ ] Reference Types
   - [ ] Custom Type
   - [ ] Enums
@@ -393,7 +394,7 @@ var ref; // undefined too
 
 ```
 
-s
+Here is an example to declare primitive types variable on typescript : 
 
 ```typescript
 let productName: string;
@@ -404,6 +405,29 @@ chainID = 137;
 isPowerful = true;
 console.log(productName);
 ```
+
+We will learn about symbol and big integer on another chapter.
+
+In javascript, when a variable wants to store literal in the form of primitive value, the variable stores the value directly. If we create a variable with values derived from other variables, each one gets a copy. Here is an example :
+
+```typescript
+var animal1: string = "dinosaurus";
+var animal2: string = animal1;
+```
+
+Variable animal1 on above code store string literal and variable animal2 is tried to binding the value to the value on animal1.
+
+<img src="assets/data-types/Variable-object.png" style="zoom:120%;" />
+
+
+
+
+
+---
+
+
+
+### Immutable
 
 
 
@@ -503,6 +527,10 @@ let ethereumWallet: CryptoWallet = {
 ```
 
 The symbol property uses a question mark, so if we don't fill in the symbol property when creating a variable the error will not occur.
+
+
+
+---
 
 
 
@@ -690,6 +718,29 @@ Previously when you learn about Data Types, you has been learn what is object bu
 <img src="assets/object/Built-in-Object.png" style="zoom:110%;" />
 
 
+
+---
+
+
+
+## Fundamental Object
+
+Basically everything on javascript is an object, there is fundamental objects whch become the basis of all objects on javascript engine. Here is the lists :
+
+1. Object
+2. Function
+3. Boolean
+4. Symbol
+5. Error
+6. EvalError
+7. InternalError
+8. RangeError
+9. ReferenceError
+10. SyntaxError
+11. TypeError
+12. URIError
+
+Sebelumnya kita telah mempelajari cara membuat **function object** menggunakan **function constructor**. **Function** adalah salah satu dari bagian **fundamental object** yang dimiliki oleh **javascript**.
 
 
 
