@@ -894,7 +894,7 @@ Before we create and use an array, we need to understood that array has a charac
 
 Here is an example of one-dimensional array : 
 
-<img src="assets/Array-One-Dimensional.jpg" style="zoom:90%;" />
+<img src="assets/array/Array-One-Dimensional.jpg" style="zoom:90%;" />
 
 
 
@@ -920,13 +920,19 @@ Here is an example of one-dimensional array :
 
 ### Array Property & Methods 
 
-Here is basic array methods if we want to add and remove element to an array using FIFO or LIFO style :
 
-<img src="assets/Array-Methods-Basic.png" style="zoom:110%;" />
+
+---
+
+
+
+Here is basic array methods if we want to add and remove element to an array using LIFO style :
+
+<img src="assets/array/Array-Method-Push-Pop.png" style="zoom:110%;" />
 
 We can execute this operations also on array of objects :
 
-<img src="assets/Array-Methods-Basic-Objects.png" style="zoom:110%;" />
+<img src="assets/array/Array-Method-Push-Pop-Object.png" style="zoom:110%;" />
 
 
 
@@ -936,12 +942,28 @@ We can execute this operations also on array of objects :
 
 #### Push Method 
 
-<img src="assets/Array-Methods-Push.png" style="zoom:110%;" />
+<img src="assets/array/Array-Methods-Push.png" style="zoom:110%;" />
 
 Here is an example code using **push() method** to add new element in the last position:
 
 ```javascript
+var arrayStr: string[] = [];
+arrayStr.push("Bitcoin");
+arrayStr.push("Satoshi");
+arrayStr.push("Nakamoto");
+arrayStr.push("Blockchain");
+```
 
+To make sure we are successful adding new element to the array, we can access length property of the array :
+
+```typescript
+console.log(arrayStr.length); 
+```
+
+Output :
+
+```
+4
 ```
 
 
@@ -954,17 +976,51 @@ Here is an example code using **push() method** to add new element in the last p
 
 
 
-<img src="assets/Array-Methods-Pop.png" style="zoom:110%;" />
+<img src="assets/array/Array-Methods-Pop.png" style="zoom:110%;" />
 
 Here is an example code using **pop() method** to remove the last element :
 
 ```javascript
+var arrayStr: string[] = [];
+arrayStr.push("Bitcoin");
+arrayStr.push("Satoshi");
+arrayStr.push("Nakamoto");
+arrayStr.push("Blockchain");
+```
 
+After we add elements to the array, lets call pop method to remove the last element :
+
+```typescript
+arrayStr.pop()
+```
+
+To make sure we are successful removing the last element in the array, we can access length property of the array :
+
+```typescript
+console.log(arrayStr.length); 
+```
+
+Output :
+
+```
+3
 ```
 
 
 
 ---
+
+
+
+Here is basic array methods if we want to add and remove element to an array using FIFO style :
+
+
+
+We can execute this operations also on array of objects :
+
+
+
+----
 
 
 
@@ -986,13 +1042,13 @@ Here is an example code using **pop() method** to remove the last element :
 
 Here is simplified array methods if we want to find first and last element on array of primitives by value.
 
-<img src="assets/Array-Methods-Find.png" style="zoom:110%;" />
+<img src="assets/array/Array-Methods-Find.png" style="zoom:110%;" />
 
 We can execute this operations also on array of objects :
 
 
 
-<img src="assets/Array-Methods-Find-Objects.png" style="zoom:110%;" />
+<img src="assets/array/Array-Methods-Find-Objects.png" style="zoom:110%;" />
 
 
 
@@ -1110,11 +1166,11 @@ Output :
 
 Here is simplified array methods if we want to find first and last index on array of primitives by value.
 
-<img src="assets/Array-Methods-Find-Index.png" style="zoom:110%;" />
+<img src="assets/array/Array-Methods-Find-Index.png" style="zoom:110%;" />
 
 We can execute this operations also on array of objects :
 
-<img src="assets/Array-Methods-Find-Index-Objects.png" style="zoom:110%;" />
+<img src="assets/array/Array-Methods-Find-Index-Objects.png" style="zoom:110%;" />
 
 
 
@@ -1435,7 +1491,7 @@ class Stack {
 
 ### Create Stack Object 
 
-```
+```typescript
 const ostack = new Stack();
 ```
 
@@ -1443,7 +1499,7 @@ const ostack = new Stack();
 
 ### Call Push Method 
 
-```
+```typescript
 ostack.push("Hello World!");
 ```
 
@@ -1483,7 +1539,7 @@ ostack.push("Hello World!");
 
 ### Call isEmpty Method
 
-```
+```typescript
 console.log(ostack.isEmpty());
 ```
 
