@@ -727,6 +727,66 @@ There is significant change between *Object Literal* and *JSON*, on JSON there i
 
 
 
+### Stringify
+
+Process to transform **object literal** into JSON is called stringify. In the real world case if we want to send data to the server we need to transform our data into efficient data exchange format, so we need to stringify our object literal into JSON.
+
+<img src="assets/json/Object-Literal-JSON.png" style="zoom:110%;" />
+
+Below is an example of object literal transformed into JSON :
+
+```javascript
+var objectLiteral = {
+    name: "Gun Gun Febrianza",
+    age: 30,
+    city: "New York"
+};
+```
+
+To change our object literal into JSON, we will use built-in object that has been provided by javascript engine called JSON Object. This object has stringify() method that we can implement :
+
+```javascript
+var JSONData = JSON.stringify(objectLiteral);
+```
+
+To make sure our data is transformed into JSON, we can confirm using **typeof keyword** :
+
+```typescript
+console.log(typeof JSONData) // string
+console.log(JSONData)
+// {"name":"Gun Gun Febrianza","age":30,"city":"New York"}
+```
+
+If the output is string then the object literal is succeed transformed.
+
+
+
+---
+
+
+
+### Parse JSON 
+
+
+
+```
+
+```
+
+
+
+----
+
+
+
+### Parse Date in JSON
+
+
+
+```
+
+```
+
 
 
 ---
