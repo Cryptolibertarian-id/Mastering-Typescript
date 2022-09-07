@@ -27,9 +27,14 @@
     - [ ] Typescript Way
       - [ ] Numeric Enums
       - [ ] String Enums
+  - [x] Symbol Type
   - [x] Type Widening
     - [x] Undefined
     - [x] Null
+  - [x] Big Integer Type
+    - [x] Arbitrary Precision
+    - [x] Arithmetic Operation
+    - [x] Comparison
 - [ ] Object
   - [ ] Fundamental Object
   
@@ -592,7 +597,7 @@ var animal2: string = animal1;
 
 Variable animal1 on above code store string literal and variable animal2 is tried to binding the value to the value on animal1.
 
-<img src="assets/data-types/Variable-object.png" style="zoom:110%;" />
+<img src="assets/data-types/Variable-Object.png" style="zoom:110%;" />
 
 Although animal1 and animal2 has the same value, each of one store value independently. If we change the value from variable animal1 then the value on variable2 will not changed. Here is an example :
 
@@ -994,6 +999,12 @@ In javascript, BigInt or Big Integer is often called as arbitrary-precision inte
 
 Previously we know that we can safely compute numbers between this range -(2<sup>53</sup> - 1) and 2<sup>53</sup> - 1, since it's stored internally with 64 bit floating point format. Numbers between this range -(2<sup>53</sup> - 1) and 2<sup>53</sup> - 1 is fixed-precision type.
 
+
+
+---
+
+
+
 ### Arbitrary Precision
 
 Arbitrary precision is big integer characteristic to store and compute integer beyond the safe limit of number types in javascript.
@@ -1013,6 +1024,74 @@ Here is he explanation of above code :
 1. On **bigInt1 variable** we stored integer number with n character at the end, n is a symbol that affirm the value is Big Integer in implicit way.
 2. On **bigInt2 variable** we converted string intto Big Integer Type.
 3. On **bigInt3 variable** we converted integer number into Big Integer Type
+
+Big Integer is primitive type to represent integer with arbitrary precision.
+
+```javascript
+console.log(typeof 123); // 'number'
+console.log(typeof 123n); // 'bigint'
+```
+
+Here is an example the maximum of safe integer before big integer occur :
+
+```javascript
+console.log(Number.MAX_SAFE_INTEGER); 
+// output : 9007199254740991
+console.log(1234567890123456789012345678901234567890n);
+// output : 1234567890123456789012345678901234567890n
+console.log(typeof 1234567890123456789012345678901234567890n);
+// output : bigint
+```
+
+
+
+---
+
+
+
+### Arithmetic Operation
+
+Like number types we can do arithmetic operation on big integer :
+
+```javascript
+console.log(50n*2n); //100n
+console.log(50n / 2n);// 25n
+console.log(5n / 2n); // 2n
+```
+
+When we divide 5 by 2 it will produce decimal number, but rounded into integer so we will lose the fractional digit. We cant also combine arithmetic operaton between big integer and number :
+
+```javascript
+console.log(100n+25);
+// TypeError: Cannot mix BigInt and other types, 
+use explicit conversions
+```
+
+If we want to continue operate the arithmetic operation  we must convert both operand into big integer type or number type. Big Integer is really helpful fo financial technology especially in Dapps & smart contract development using javascript.
+
+
+
+---
+
+
+
+### Comparison
+
+We can compare between big integer and number :
+
+```javascript
+console.log(1n < 2); // true
+console.log(2n > 1); // true
+console.log(2n > 2); // false
+console.log(2n >= 2); // true
+```
+
+The value is equal but different data types, here is another proof :
+
+```javascript
+console.log(0n === 0); // false
+console.log(0n == 0); // true
+```
 
 
 
