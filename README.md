@@ -988,6 +988,38 @@ When the author read **You Dont Know JS**, there is exist interesting opinion :
 
 
 
+## BigInt Data Type
+
+In javascript, BigInt or Big Integer is often called as arbitrary-precision integer, so what is the meaning of arbitrary decision?
+
+Previously we know that we can safely compute numbers between this range -(2<sup>53</sup> - 1) and 2<sup>53</sup> - 1, since it's stored internally with 64 bit floating point format. Numbers between this range -(2<sup>53</sup> - 1) and 2<sup>53</sup> - 1 is fixed-precision type.
+
+### Arbitrary Precision
+
+Arbitrary precision is big integer characteristic to store and compute integer beyond the safe limit of number types in javascript.
+
+<img src="assets/data-types/Arbitrary-Fixed-Precision.png" style="zoom:110%;" />
+
+To declare variable with big integer types look at below example :
+
+```typescript
+const bigInt1: bigint = 1234567890123456789012345678901234567890n;
+const bigInt2: bigint = BigInt("1234567890123456789012345678901234567890");
+const bigInt3: bigint = BigInt(1234567890123456789012345678901234567890);
+```
+
+Here is he explanation of above code :
+
+1. On **bigInt1 variable** we stored integer number with n character at the end, n is a symbol that affirm the value is Big Integer in implicit way.
+2. On **bigInt2 variable** we converted string intto Big Integer Type.
+3. On **bigInt3 variable** we converted integer number into Big Integer Type
+
+
+
+---
+
+
+
 # Object
 
 Previously when you learn about Data Types, you has been learn what is object but the term about object is really ambigous on javascript. Object that we learn before is Fundamental Object, one of the built-in Object inside javascript engine. 
