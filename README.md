@@ -36,23 +36,23 @@
     - [x] Arithmetic Operation
     - [x] Comparison
 - [ ] Object
-  - [ ] Fundamental Object
+  - [x] Fundamental Object
   
-  - [ ] Custom Object Types
-    - [ ] Type Template
+  - [x] Custom Object Types
+    - [x] Type Template
   
-    - [ ] Type Alias
+    - [x] Type Alias
   
-    - [ ] Interface
+    - [x] Interface
   
-    - [ ] Mutable Properties
+    - [x] Mutable Properties
   
-    - [ ] Object Destructure
+    - [x] Object Destructure
   
-    - [ ] Dynamic Properties
-      - [ ] Index Type Signature
+    - [x] Dynamic Properties
+      - [x] Index Type Signature
   
-      - [ ] Record Type
+      - [x] Record Type
   
     - [ ] Optional Properties
   
@@ -905,6 +905,50 @@ enum BlockchainRPC {
 console.log(BlockchainRPC);
 //{ Server: "SERVER-ADDRESS", Height: "HEIGHT", Latency: "LATENCY", Score: "SCORE" }
 console.log(BlockchainRPC.Latency); //Latency
+```
+
+
+
+---
+
+
+
+## Symbol Type
+
+Symbol is new primitive data type since EcmaScript 6 that represent unique token and it has immutable characteristic. Below we make constant variable and assign new value from symbol function, internally the return from symbol function is unique id.
+
+```javascript
+const symbol = Symbol();
+console.log(String(symbol));
+// Symbol()
+```
+
+Why unique? because every symbol produce different identity that we cant see, why we cant see the unique id on symbol? because its designed to represent the unique value in the background system. We can prove that every symbol has its own identity that different from any other symbol, here is the example :
+
+```javascript
+var sym1 = Symbol("Peer to Peer, Bitcoin");
+var sym2 = Symbol("Peer to Peer, Bitcoin");
+console.log(sym1 === sym2);
+// false
+```
+
+To improve the code readability we can use parameter that is owned by symbol function, look at the code below :
+
+```javascript
+const symbol1 = Symbol('symbol1');
+console.log(String(symbol1));
+```
+
+Usually symbol is used as unique keys for properties from any object :
+
+```javascript
+const userIdentity = Symbol("IDuser");
+
+const client = {
+    userIdentity: "888",
+};
+
+console.log(client["userIdentity"]); //888
 ```
 
 
