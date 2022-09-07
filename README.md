@@ -27,6 +27,9 @@
     - [ ] Typescript Way
       - [ ] Numeric Enums
       - [ ] String Enums
+  - [ ] Type Widening
+    - [ ] Undefined
+    - [ ] Null
 - [ ] Object
   - [ ] Fundamental Object
   
@@ -530,7 +533,7 @@ const isCute = true;
 
 
 
----
+----
 
 
 
@@ -898,6 +901,39 @@ console.log(BlockchainRPC);
 //{ Server: "SERVER-ADDRESS", Height: "HEIGHT", Latency: "LATENCY", Score: "SCORE" }
 console.log(BlockchainRPC.Latency); //Latency
 ```
+
+
+
+---
+
+
+
+## Type Widening
+
+When you make a computation on javascript, undefined and null literal value is often become the source of error. On typescript if we declare variable without assignning a value, then internally typescript will convert to **any type**. Typescript compiler also support **--strictNullCheck option** to prohibit declare new variable with null type. If that  **--strictNullCheck option** is configured then error will occur on this example code :
+
+```typescript
+let bitcoin = 21000000;
+bitcoin = null; //compile error
+bitcoin = undefined; //compile error
+```
+
+
+
+----
+
+
+
+### Undefined
+
+In javascript, when new variable created without any value will automatically assigned undefined value.
+
+```javascript
+var bitcoin;
+console.log(bitcoin)
+```
+
+The differences between null and undefined is null variable must be declared in explicit way
 
 
 
