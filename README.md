@@ -27,9 +27,9 @@
     - [ ] Typescript Way
       - [ ] Numeric Enums
       - [ ] String Enums
-  - [ ] Type Widening
-    - [ ] Undefined
-    - [ ] Null
+  - [x] Type Widening
+    - [x] Undefined
+    - [x] Null
 - [ ] Object
   - [ ] Fundamental Object
   
@@ -910,7 +910,9 @@ console.log(BlockchainRPC.Latency); //Latency
 
 ## Type Widening
 
-When you make a computation on javascript, undefined and null literal value is often become the source of error. On typescript if we declare variable without assignning a value, then internally typescript will convert to **any type**. Typescript compiler also support **--strictNullCheck option** to prohibit declare new variable with null type. If that  **--strictNullCheck option** is configured then error will occur on this example code :
+When you make a computation on javascript, undefined and null literal value is often become the source of error. On typescript if we declare variable without assignning a value, then internally typescript will convert to **any type**. Typescript compiler also support **--strictNullCheck option** to prohibit declare new variable with null type. 
+
+If that  **--strictNullCheck option** is configured then error will occur on this example code :
 
 ```typescript
 let bitcoin = 21000000;
@@ -933,7 +935,52 @@ var bitcoin;
 console.log(bitcoin)
 ```
 
-The differences between null and undefined is null variable must be declared in explicit way
+The differences between null and undefined is null variable must be declared in explicit way.
+
+```javascript
+console.log(typeof undefined);
+//"undefined"
+console.log(typeof null);
+//"object"
+console.log(null === undefined);
+//false
+console.log(null === undefined);
+//true
+```
+
+
+
+---
+
+
+
+### Null
+
+In javacript null mean nothing, but internally javascript treat null as object.
+
+```typescript
+var genesisBlock = null;
+console.log(typeof genesisBlock); //object
+```
+
+Previously we know that null is primitive types, why javascript treat null as object? this is really good question.
+
+It's happen since the first time javascript interpreter is released. That is why Douglas Crockford called javascript language as *the world's most misunderstood programming language*. 
+
+```javascript
+// This stands since the beginning of JavaScript
+typeof null === 'object';
+```
+
+There was some proposal to fix this problem with below code :
+
+```javascript
+typeof null === 'null';
+```
+
+When the author read **You Dont Know JS**, there is exist interesting opinion :
+
+> *This is a long-standing bug in JS, but one that is likely never going to be fixed. Too much code on the Web relies on the bug and thus fixing it would cause a lot more bugs!*
 
 
 
