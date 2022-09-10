@@ -1825,11 +1825,195 @@ if (NaN) {
 
 
 
+## What is Function? 
+
+
+
+----
+
+
+
+## First-class Function 
+
+
+
+----
+
+
+
+## Simple Function 
+
+
+
+----
+
+
+
+## Function Parameter
+
+
+
+----
+
+
+
+## Function Return 
+
+
+
+----
+
+
+
+## Function as Function Parameter
+
+
+
+----
+
+
+
+## Function & Local Variable 
+
+
+
+----
+
+
+
+## Function & Outer Variable 
+
+
+
+----
+
+
+
+## Callback Function 
+
+
+
+----
+
+
+
+## Arrow Function
+
+
+
+----
+
+
+
+## Multiline Arrow Function 
+
+
+
+----
+
+
+
+## Anonymous Function 
+
+
+
+----
+
+
+
+## Function Constructor 
+
+
+
+----
+
+
+
+## Function As Expression 
+
+
+
+----
+
+
+
+## Nested Function 
+
+
+
+----
+
+
+
+## Argument Object 
+
+
+
+----
+
+
+
+## This Keyword 
+
+
+
+----
+
+
+
+## Call & Apply Function 
+
+
+
+----
+
+
+
+## IIFE
+
+
+
 ----
 
 
 
 # Error Handling
+
+
+
+## Syntax Error 
+
+
+
+----
+
+
+
+## Logical Error 
+
+
+
+----
+
+
+
+## Runtime Error 
+
+
+
+----
+
+
+
+## Try & Catch 
+
+
+
+----
+
+
+
+## Custom Error
 
 
 
