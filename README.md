@@ -530,6 +530,10 @@ Happy Debugging!
 
 ### Identifier 
 
+Every variables has a unique name and it's called as identifier.
+
+Every time we create identifier there is a rules that determine the naming convention, we cant use reserved keywords as identifier and identifier in javascript is case sensitive.
+
 
 
 ---
@@ -552,6 +556,120 @@ let deeptech : string = "DeepTech"
 Here is the syntax notation :
 
 <img src="assets/variable/variable-declaration.png" style="zoom:110%;" />
+
+
+
+---
+
+
+
+### Binding
+
+
+
+----
+
+
+
+## Reserved Words
+
+
+
+Below is a series of token of typescript programming language :
+
+| as      | any      | enum       | get        |
+| ------- | -------- | ---------- | ---------- |
+| number  | string   | module     | public     |
+| private | package  | implements | interface  |
+| static  | void     | while      | yield      |
+| break   | case     | catch      | class      |
+| const   | continue | debugger   | default    |
+| delete  | do       | else       | export     |
+| extends | finally  | for        | function   |
+| if      | import   | in         | instanceof |
+| new     | return   | super      | switch     |
+| this    | throw    | try        | typeof     |
+| var     | void     |            |            |
+
+
+
+---
+
+
+
+### Future Reserved Words 
+
+
+
+----
+
+
+
+### Null Literal 
+
+
+
+---
+
+
+
+### Boolean Literal
+
+---
+
+
+
+---
+
+
+
+## Naming Convention
+
+
+
+### What is Unicode?
+
+
+
+---
+
+
+
+## Case Sensitivity
+
+
+
+---
+
+
+
+## Loosely Typed-language
+
+
+
+---
+
+
+
+## Keyword var 
+
+
+
+---
+
+
+
+
+
+## Keyword let 
+
+
+
+---
+
+
+
+## Keyword const
 
 
 
@@ -608,6 +726,82 @@ const isCute = true;
 
 
 ----
+
+
+
+# Expression & Operator
+
+
+
+## Statement  
+
+
+
+----
+
+
+
+## Expression 
+
+
+
+----
+
+
+
+## Operator & Operand 
+
+
+
+----
+
+
+
+## Operator Precedence 
+
+
+
+----
+
+
+
+## Arithmetic Operator 
+
+
+
+----
+
+
+
+## Arithmetic Operation 
+
+
+
+----
+
+
+
+## Comparison Operator 
+
+
+
+----
+
+
+
+## Logical Operator 
+
+
+
+----
+
+
+
+## Assignment Operator
+
+
+
+---
 
 
 
@@ -1351,6 +1545,46 @@ console.log(0n == 0); // true
 
 
 
+## Block Statement
+
+
+
+----
+
+
+
+## Conditional Statement
+
+
+
+----
+
+
+
+## Ternary Operator 
+
+
+
+----
+
+
+
+## Multiconditional Statement 
+
+
+
+----
+
+
+
+## Switch Style
+
+
+
+----
+
+
+
 ## Truthy
 
 In javascript, a truthy value is a value that considered true when encountered in a boolean context. 
@@ -1513,8 +1747,6 @@ if (NaN) {
 
 
 
-
-
 ---
 
 
@@ -1524,6 +1756,80 @@ if (NaN) {
 # Loop & Iteration
 
 
+
+## While Statement
+
+
+
+----
+
+
+
+## Do...While Statement
+
+
+
+----
+
+
+
+## For Statement
+
+
+
+---
+
+
+
+## For...of Statement
+
+
+
+----
+
+
+
+## For...in Statement
+
+
+
+----
+
+
+
+## Break Statement
+
+
+
+----
+
+
+
+## Continue Statement
+
+
+
+----
+
+
+
+## Labeled Statement
+
+
+
+----
+
+
+
+# Function 
+
+
+
+----
+
+
+
+# Error Handling
 
 
 
@@ -2137,6 +2443,14 @@ If the output is string then the object literal is succeed transformed.
 ---
 
 
+
+
+
+# Classes
+
+
+
+----
 
 
 
@@ -3420,6 +3734,30 @@ Output :
 
 
 -----
+
+
+
+# Generic
+
+
+
+----
+
+
+
+# Module
+
+
+
+----
+
+
+
+# Namespace
+
+
+
+----
 
 
 
