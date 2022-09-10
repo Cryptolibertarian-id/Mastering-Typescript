@@ -4,11 +4,11 @@
 
 # Table of Contents
 
-- [ ] Typescript
+- [x] Typescript
   - [x] Why Typescript?
     - [x] Static Typing
     - [x] Type Annotation
-  - [ ] New Features?
+  - [x] New Features?
 - [x] Debugging Typescript
   - [x] Add Source Map
   - [x] Config Debugger
@@ -20,13 +20,13 @@
 - [x] Data Types
   - [x] Primitive Types
     - [x] Immutable
-  - [ ] Reference Types
-  - [ ] Custom Type
-  - [ ] Enums
-    - [ ] Javascript Way
-    - [ ] Typescript Way
-      - [ ] Numeric Enums
-      - [ ] String Enums
+  - [x] Reference Types
+  - [x] Custom Type
+  - [x] Enums
+    - [x] Javascript Way
+    - [x] Typescript Way
+      - [x] Numeric Enums
+      - [x] String Enums
   - [x] Symbol Type
   - [x] Type Widening
     - [x] Undefined
@@ -35,7 +35,7 @@
     - [x] Arbitrary Precision
     - [x] Arithmetic Operation
     - [x] Comparison
-- [ ] Object
+- [x] Object
   - [x] Fundamental Object
   
   - [x] Custom Object Types
@@ -54,15 +54,15 @@
   
       - [x] Record Type
   
-    - [ ] Optional Properties
+    - [x] Optional Properties
   
-    - [ ] Read Only Properties
+    - [x] Read Only Properties
   
-    - [ ] Extending Types
+    - [x] Extending Types
   
-    - [ ] Generic Object Types
+    - [x] Generic Object Types
   
-    - [ ] Complex Object Types
+    - [x] Complex Object Types
   
   - [ ] Object Comparison
   
@@ -72,24 +72,27 @@
     - [ ] Parse JSON
     - [ ] Parse Date in JSON
   
-- [ ] Interface
-  - [ ] Extending Interface
-  - [ ] Intersection Types
+- [x] Interface
+  - [x] Extending Interface
+  - [x] Intersection Types
 
-- [ ] Modules
-  - [ ] Import - Single Module
-  - [ ] Import - Entire Module
-  - [ ] Import - Rename Module
-  - [ ] Compiling Modules
+- [x] Modules
+  - [x] Import - Single Module
+  - [x] Import - Entire Module
+  - [x] Import - Rename Module
+  - [x] Compiling Modules
 
 - [ ] Collection
   - [x] What is Collections?
     - [x] Iterable
     - [x] Keyed
     - [x] Destructure
-  - [ ] What is Indexed Collections?
-    - [ ] Array
-    - [ ] Create Array
+  - [x] What is Indexed Collections?
+    - [x] Array
+    - [x] Create Array
+      - [x] Index & Element
+      - [x] Array Literal
+      - [x] Array Constructor
     - [ ] Iterate Array
     - [ ] Array Property & Methods
       - [ ] Length Property
@@ -2033,6 +2036,12 @@ Can we get the partial collection in ease and fast on the collection?
 
 ## What is Indexed Collections?
 
+On indexed collection, data is sorted by its index.
+
+
+
+---
+
 
 
 ### Array
@@ -2050,6 +2059,86 @@ Here is an example of one-dimensional array :
 
 
 ### Create Array 
+
+In javascript we can store more values on variable using an array. There is three way to create an array :
+
+
+
+#### Index & Element 
+
+We can use an index to put new element to the array of string :
+
+```typescript
+const arrayBlockchain: string[] = [];
+arrayBlockchain[0] = "Bitcoin";
+arrayBlockchain[1] = "Ethereum";
+arrayBlockchain[2] = "Polygon";
+arrayBlockchain[30] = "Solana";
+console.log(arrayBlockchain);
+```
+
+Output :
+
+```
+[ 'Bitcoin', 'Ethereum', 'Polygon', <27 empty items>, 'Solana' ]
+```
+
+Index number in array is started in zero. If you want to get specifit array :
+
+```typescript
+console.log(arrayBlockchain[30]);
+```
+
+Output :
+
+```
+Solana
+```
+
+If you try to peek at empty items you will get undefined :
+
+```typescript
+console.log(arrayBlockchain[20]);
+```
+
+Output :
+
+```
+undefined
+```
+
+
+
+----
+
+
+
+#### Array Literal 
+
+
+
+```typescript
+const bitcoinFigures: string[] = ["Satoshi Nakamoto", "Adam Back", "Dan Held"];
+console.log(bitcoinFigures);
+```
+
+
+
+----
+
+
+
+#### Array Constructor
+
+
+
+```typescript
+const bitcoinFigures: string[] = new Array(
+  "Satoshi Nakamoto",
+  "Andreas Antonopoulos"
+);
+console.log(bitcoinFigures);
+```
 
 
 
