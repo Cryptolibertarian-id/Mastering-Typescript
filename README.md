@@ -93,7 +93,11 @@
       - [x] Index & Element
       - [x] Array Literal
       - [x] Array Constructor
-    - [ ] Iterate Array
+    - [x] Iterate Array
+      - [x] Array Looping
+      - [x] Array Looping for..of
+      - [x] Array Looping for..in
+    - [x] Destructure Array
     - [ ] Array Property & Methods
       - [ ] Length Property
       - [ ] Push Method
@@ -2119,7 +2123,7 @@ undefined
 
 #### Array Literal 
 
-
+We can put directly literal value to the array :
 
 ```typescript
 const bitcoinFigures: string[] = ["Satoshi Nakamoto", "Adam Back", "Dan Held"];
@@ -2134,7 +2138,7 @@ console.log(bitcoinFigures);
 
 #### Array Constructor
 
-
+We can also using array constructor like below :
 
 ```typescript
 const bitcoinFigures: string[] = new Array(
@@ -2154,7 +2158,107 @@ console.log(bitcoinFigures);
 
 
 
+#### Array Looping 
+
+Array is iterable, so we can operate looping to an array for example to display every elements :
+
+```typescript
+const bitcoinFigures: string[] = ["Satoshi", "Adam Back", "Andreas Antonopoulos"];
+
+for (let i: number = 0; i < bitcoinFigures.length; i++) {
+  console.log(i + " " + bitcoinFigures[i]);
+}
+```
+
+Output :
+
+```
+0 Satoshi
+1 Adam Back
+2 Andreas Antonopoulos
+```
+
+
+
 ----
+
+
+
+#### Array Looping for..of 
+
+Here is an example using for..of looping for an array :
+
+```typescript
+const bitcoinFigures: string[] = ["Satoshi", "Adam Back", "Andreas Antonopoulos"];
+
+var i: number = 0;
+for (let arrayVal of bitcoinFigures) {
+  console.log(i + " " + arrayVal);
+  i++;
+}
+```
+
+Output :
+
+```
+0 Satoshi
+1 Adam Back
+2 Andreas Antonopoulos
+```
+
+
+
+----
+
+
+
+#### Array Looping for..in 
+
+Here is an example using for..in looping for an array :
+
+```typescript
+const bitcoinFigures: string[] = ["Satoshi", "Adam Back", "Andreas Antonopoulos"];
+
+for (let index in bitcoinFigures) {
+  console.log(index + " " + bitcoinFigures[index]);
+}
+```
+
+Output :
+
+```
+0 Satoshi
+1 Adam Back
+2 Andreas Antonopoulos
+```
+
+
+
+----
+
+
+
+### Destructure Array
+
+Array support destructure, so we can extract data on array object, here is an example :
+
+```typescript
+const bitcoinFigures: string[] = ["Satoshi", "Adam Back", "Dan Held"];
+const [first, second] = bitcoinFigures;
+console.log(first);
+console.log(second);
+```
+
+Output :
+
+```
+Satoshi
+Adam Back
+```
+
+
+
+---
 
 
 
