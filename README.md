@@ -1899,6 +1899,25 @@ if (NaN) {
 
 ## Arrow Function
 
+Arrow function is introduced when ES 6 is released, with arrow function we can create a short syntax to create function and create anonymous function.
+
+Here is an example of arrow function :
+
+```typescript
+let sum = (a: number, b: number) => a + b;
+
+/* Equal with:
+
+  let sum = function(a, b) {
+  return a + b;
+  };
+  */
+
+console.log(sum(1, 2)); // 3
+```
+
+ On Arrow function, return will be automatically added in implicit way
+
 
 
 ----
@@ -1906,6 +1925,20 @@ if (NaN) {
 
 
 ## Multiline Arrow Function 
+
+Here is an example of arrow function that support multiple statements within the function :
+
+```typescript
+let summary = (a: number, b: number): number => {
+    // curly brace to create multiline function
+    let result = a + b;
+    return result; // use return keyword
+};
+
+console.log(summary(1, 2)); // 3
+```
+
+For multiline we need to add curly brace and return keyword.
 
 
 
@@ -1915,13 +1948,16 @@ if (NaN) {
 
 ## Anonymous Function 
 
+Anonymous Functions is a function without identifier.
 
+Here is an example of Anonymous Function :
 
-----
-
-
-
-## Function Constructor 
+```typescript
+let addition = function (a: number, b: number): number {
+    return a * b;
+};
+console.log(addition(4, 3)); //12
+```
 
 
 
@@ -1930,6 +1966,22 @@ if (NaN) {
 
 
 ## Function As Expression 
+
+We can use a function as an operand on any expression, here is an example function as expression :
+
+```typescript
+function additionFunc(a: number, b: number): number {
+    return a * b;
+}
+var x: number = additionFunc(4, 3) * 2; //expression
+console.log(x); 
+```
+
+Output :
+
+```
+24
+```
 
 
 
