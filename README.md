@@ -2060,13 +2060,17 @@ Here is an example of one-dimensional array :
 
 ### Create Array 
 
-In javascript we can store more values on variable using an array. There is three way to create an array :
+In javascript we can store more values on variable using an array. We can store primitive types like number string into an array or reference types like object, array of array, map into array.
+
+<img src="assets/array/Array-Types.png" style="zoom:90%;" />
+
+There is three way to create an array :
 
 
 
 #### Index & Element 
 
-We can use an index to put new element to the array of string :
+Here is an example of Array Primitive Types. We can use an index to put new element to the array of string :
 
 ```typescript
 const arrayBlockchain: string[] = [];
