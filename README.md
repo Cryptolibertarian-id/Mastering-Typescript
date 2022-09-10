@@ -35,6 +35,10 @@
     - [x] Arbitrary Precision
     - [x] Arithmetic Operation
     - [x] Comparison
+- [x] Control Flow
+  
+- [x] Loop & Iteration
+  
 - [x] Object
   - [x] Fundamental Object
   
@@ -1150,6 +1154,116 @@ console.log(0n == 0); // true
 
 
 ---
+
+
+
+# Control Flow
+
+
+
+## Truthy
+
+In javascript, a truthy value is a value that considered true when encountered in a boolean context. 
+
+Here is an example, this will be considered as true :
+
+```typescript
+if (true) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+If we put an array or empty array, this also will be considered as true :
+
+```typescript
+if ([]) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+If we put an object or empty object, this also will be considered as true :
+
+```typescript
+if ({}) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+If we put a number except zero will be considered as true :
+
+```typescript
+if (1) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+if (-12) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+if (2000n) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+String also will be considered as true :
+
+```typescript
+if ("false") {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+This also will be considered true, since map is an object :
+
+```typescript
+if (new Map()) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+
+
+----
+
+
+
+## Falsy
+
+In javascript, a truthy value is a value that considered true when encountered in a boolean context. 
+
+
+
+
+
+---
+
+
+
+
+
+# Loop & Iteration
+
+
+
+
+
+----
 
 
 
