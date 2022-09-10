@@ -1986,6 +1986,12 @@ For **Target Environment** :
 
 ## What is Collections?
 
+Collections is a series of object references that will be treated as a single data. We can call collections as containers. In javascript there is two collections, there is Keyed Collections and Indexed Collections.
+
+<img src="assets/collection/Collection-Type.png" style="zoom:110%;" />
+
+Each of collections has its own advantage, on keyed collections there is map and set object and on indexed collections there is array and typed array.
+
 
 
 ----
