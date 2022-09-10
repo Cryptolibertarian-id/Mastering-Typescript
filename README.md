@@ -1195,7 +1195,7 @@ if ({}) {
 }
 ```
 
-If we put a number except zero will be considered as true :
+If we put a number except zero, negative zero and big integer zero will be considered as true :
 
 ```typescript
 if (1) {
@@ -1217,7 +1217,7 @@ if (2000n) {
 }
 ```
 
-String also will be considered as true :
+Non-empty string also will be considered as true :
 
 ```typescript
 if ("false") {
@@ -1245,7 +1245,81 @@ if (new Map()) {
 
 ## Falsy
 
-In javascript, a truthy value is a value that considered true when encountered in a boolean context. 
+In javascript, a falsy value is a value that considered false when encountered in a boolean context. 
+
+Here is an example, this will be considered as false :
+
+```typescript
+if (false) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+If we put a number zero, negative zero and big integer zero will be considered as false :
+
+```typescript
+if (0) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+if (-0) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+if (0n) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+If we put empty string this will be considered as false :
+
+```typescript
+if ("") {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+if (``) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+For null and undefined also will be considered as false :
+
+```typescript
+if (null) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+if (undefined) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
+
+For Not A Number also will be considered as false :
+
+```typescript
+if (NaN) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+```
 
 
 
