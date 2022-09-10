@@ -18,6 +18,12 @@
     - [x] Declare Explicit
     - [x] Declare Implicit
 - [x] Data Types
+  - [ ] What is Data?
+  - [ ] What is Types?
+  - [ ] What is Generic Variable?
+  - [ ] Javascript Data Types
+  - [x] What is Pointer?
+  - [x] What is Stack & Heaps?
   - [x] Primitive Types
     - [x] Immutable
   - [x] Reference Types
@@ -27,6 +33,12 @@
     - [x] Typescript Way
       - [x] Numeric Enums
       - [x] String Enums
+  - [ ] String Data Type
+  - [ ] Number Data Type
+  - [ ] Boolean Data Type
+  - [ ] Type Conversion
+  - [ ] Type Checking
+  - [ ] Any Type
   - [x] Symbol Type
   - [x] Type Widening
     - [x] Undefined
@@ -35,47 +47,51 @@
     - [x] Arbitrary Precision
     - [x] Arithmetic Operation
     - [x] Comparison
+  
 - [x] Control Flow
-  
+  - [x] Truthy
+
+  - [x] Falsy
+
 - [x] Loop & Iteration
-  
+
 - [x] Object
   - [x] Fundamental Object
-  
+
   - [x] Custom Object Types
     - [x] Type Template
-  
+
     - [x] Type Alias
-  
+
     - [x] Interface
-  
+
     - [x] Mutable Properties
-  
+
     - [x] Object Destructure
-  
+
     - [x] Dynamic Properties
       - [x] Index Type Signature
-  
+
       - [x] Record Type
-  
+
     - [x] Optional Properties
-  
+
     - [x] Read Only Properties
-  
+
     - [x] Extending Types
-  
+
     - [x] Generic Object Types
-  
+
     - [x] Complex Object Types
-  
+
   - [ ] Object Comparison
-  
+
   - [ ] JSON
     - [ ] JSON & Object Literal
     - [ ] Stringify
     - [ ] Parse JSON
     - [ ] Parse Date in JSON
-  
+
 - [x] Interface
   - [x] Extending Interface
   - [x] Intersection Types
@@ -114,11 +130,11 @@
       - [ ] Find Last Index Method
       - [ ] Filter Method
       - [ ] For Each Method
-  
+
     - [ ] Multidimensional Array
     - [ ] Matrix
     - [ ] Array of Interface
-  
+
 - [ ] Data Structure
   - [ ] Stack
     - [ ] Create Stack Class
@@ -504,6 +520,45 @@ Happy Debugging!
 
 
 
+## Variable
+
+
+
+---
+
+
+
+### Identifier 
+
+
+
+---
+
+
+
+### Literal
+
+Value that will be stored in the variable is called literal. Here is an example variable declaration with consist of reserved keyword, identifier & literal :
+
+```typescript
+let deeptech : string = "DeepTech"
+
+//let <- reserved keyword
+//deeptech <- identifier
+//string <- reserved keyword & type annotation
+//"DeepTech" <- literal (string literal)
+```
+
+Here is the syntax notation :
+
+<img src="assets/variable/variable-declaration.png" style="zoom:110%;" />
+
+
+
+---
+
+
+
 ## Type Annotations
 
 Typescript uses Type Annotations to explicitly assign data type to an identifier. When an identifier, variable, function, or object has been assigned a type annotation, the identifier can only use the data type that has been given.
@@ -557,6 +612,93 @@ const isCute = true;
 
 
 # Data Types
+
+
+
+## What is Data?
+
+
+
+---
+
+
+
+## What is Types?
+
+
+
+---
+
+
+
+## What is Generic Variable? 
+
+Generic Variable is a variable that we can create without assign data types in explicit way.
+
+
+
+----
+
+
+
+## Javascript Data Types 
+
+According to EcmaScript there is 7 data types in javascript :
+
+<img src="assets/data-types/Data-Types.png" style="zoom:110%;" />
+
+
+
+
+
+
+
+---
+
+
+
+## What is Pointer? 
+
+Variable is a place to store data and every variable has its own memory address.
+
+Pointer is a variable that store memory address of other variable.
+
+Example pointer in c :
+
+```c
+#include <stdio.h>
+int main () {
+    int  var = 26;   /* Variable Declaration */
+    int  *ip;        /* Declare Pointer Variable */
+    ip = &var;  /* Store memory address from var variable to pointer variable */
+    
+    printf("var variable Memory Address : %x\n", &var  );
+    /* memory address stored in pointer variable */
+    printf("Memory Address stored on ip variable: %x\n", ip );
+    /* Access value that that used on pointer */
+    printf("The value from *ip variable: %d\n", *ip );
+    return 0;
+}
+/* 
+  var variable Memory Address : bffd8b3c
+  Memory Address stored on ip variable: bffd8b3c
+  The value from *ip variable: 26 
+  */
+```
+
+
+
+---
+
+
+
+## What is Stack & Heaps?
+
+Stack is used to allocate **static memory** and heap is on **dynamic memory**, both stored in **Random Access Memory (RAM)**. Allocated variable inside stack stored directly in the memory and **access to stack memory is fast**. Allocated variable inside heap contains a memory that allocated at a runtime and **access to dynamic memory is slow**.
+
+
+
+----
 
 
 
@@ -920,6 +1062,54 @@ console.log(BlockchainRPC);
 //{ Server: "SERVER-ADDRESS", Height: "HEIGHT", Latency: "LATENCY", Score: "SCORE" }
 console.log(BlockchainRPC.Latency); //Latency
 ```
+
+
+
+---
+
+
+
+## String Data Type
+
+
+
+---
+
+
+
+## Number Data Type 
+
+
+
+----
+
+
+
+## Boolean Data Type
+
+
+
+----
+
+
+
+## Type Conversion 
+
+
+
+----
+
+
+
+## Type Checking 
+
+
+
+---
+
+
+
+## Any Type
 
 
 
