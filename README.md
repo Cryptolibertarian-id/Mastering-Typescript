@@ -83,7 +83,10 @@
   - [ ] Compiling Modules
 
 - [ ] Collection
-  - [ ] What is Collections?
+  - [x] What is Collections?
+    - [x] Iterable
+    - [x] Keyed
+    - [x] Destructure
   - [ ] What is Indexed Collections?
     - [ ] Array
     - [ ] Create Array
@@ -100,11 +103,11 @@
       - [ ] Find Last Index Method
       - [ ] Filter Method
       - [ ] For Each Method
-
+  
     - [ ] Multidimensional Array
     - [ ] Matrix
     - [ ] Array of Interface
-
+  
 - [ ] Data Structure
   - [ ] Stack
     - [ ] Create Stack Class
@@ -1991,6 +1994,36 @@ Collections is a series of object references that will be treated as a single da
 <img src="assets/collection/Collection-Type.png" style="zoom:110%;" />
 
 Each of collections has its own advantage, on keyed collections there is map and set object and on indexed collections there is array and typed array.
+
+<img src="assets/collection/Collection-Properties.png" style="zoom:110%;" />
+
+There is three factor that determine what collection we need to solve the problem :
+
+
+
+### Iterable
+
+Can we operate looping on the collection directly and access the value?
+
+
+
+----
+
+
+
+### Keyed
+
+Can we get the value using key that owned by the value?
+
+
+
+----
+
+
+
+### Destructurable
+
+Can we get the partial collection in ease and fast on the collection?
 
 
 
